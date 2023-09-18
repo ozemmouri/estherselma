@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.left-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+}
+.video {
+  display: flex;
+  flex: 1 1 0;
+}
+.right-side {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0; 
+}
