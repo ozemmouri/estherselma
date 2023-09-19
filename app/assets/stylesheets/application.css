@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+ }
 .container {
   display: flex;
   flex-direction: row;
@@ -20,7 +24,7 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0;
+  flex: 1;
 }
 .menu li {
   list-style: none;
@@ -28,10 +32,16 @@
 .video {
   align-items: center;
   display: flex;
-  flex: 1 1 0;
+  flex: 1;
 }
 .right-side {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0; 
+  flex: 1; 
+}
+.right-side li {
+  list-style: none;
+}
+.footer {
+  align-content: center;
 }
