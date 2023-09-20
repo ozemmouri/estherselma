@@ -65,6 +65,10 @@
 .container {
   display: flex;
   flex-direction: row;
+  padding: 10vh;
+}
+.container > h1 {
+  padding-bottom: -15px;
 }
 .left-side {
   display: flex;
@@ -87,6 +91,7 @@
 .right-side li {
   list-style: none;
 }
+
 .footer {
   align-content: center;
 }
