@@ -11,46 +11,65 @@
   </head>
 
   <body>
+    <div class="background">
+      <div class="container">
+        <div class="left-side">
+          <div class="title">
+            <%= link_to root_path do %><h1>ESTHER ET SELMA</h1><% end %>
+            <p>Festival de cinéma de l'exil<br>
+            Essaouira</p>
+          </div>
+          <div class="menu">
+            <ul>
+              <%= link_to "Un festival engagé", festival_path %>
+              <li>2023, édition pionnière</li>
+              <li>Paroles</li>
+              <li>Tissu culturel</li>
+              <li>Programme</li>
+              <li>Infos pratiques</li>
+              <li>Billeterie</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
     <%= yield %>
+        <div class="layout-options">
+          <ul>
+            <li><a>EXTRAIT SUIVANT</a></li>
+            <li>ACTIVER LE SON</li>
+            <li>
+              <div class="mode-toggle">
+                <button id="toggle-mode-button">INVERSER LES COULEURS</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
     <script>
-      // Hide Header on on scroll down
-      var didScroll;
-      var lastScrollTop = 0;
-      var delta = 5;
-      var navbarHeight = $('footer').outerHeight();
+      // JavaScript to toggle dark/light mode
+      document.addEventListener('DOMContentLoaded', function() {
+        const toggleModeButton = document.getElementById('toggle-mode-button');
+        const body = document.body;
 
-      $(window).scroll(function(event){
-          didScroll = true;
+        toggleModeButton.addEventListener('click', function() {
+          body.classList.toggle('dark-mode');
+          body.classList.toggle('light-mode');
+
+          // Toggle the background image class if needed
+          const background = document.querySelector('.background');
+          if (background) {
+            background.classList.toggle('dark-mode');
+            background.classList.toggle('light-mode');
+          }
+
+          // Update button text
+          const currentMode = body.classList.contains('dark-mode') ? 'Dark Mode' : 'Light Mode';
+          toggleModeButton.textContent = `INVERSER LES COULEURS`;
+        });
       });
-
-      setInterval(function() {
-          if (didScroll) {
-              hasScrolled();
-              didScroll = false;
-          }
-      }, 250);
-
-      function hasScrolled() {
-          var st = $(this).scrollTop();
-
-          // Make sure they scroll more than delta
-          if(Math.abs(lastScrollTop - st) <= delta)
-              return;
-
-          // If they scrolled down and are past the navbar, add class .nav-up.
-          // This is necessary so you never see what is "behind" the navbar.
-          if (st > lastScrollTop && st > navbarHeight){
-              // Scroll Down
-              $('footer').removeClass('nav-down').addClass('nav-up');
-          } else {
-              // Scroll Up
-              if(st + $(window).height() < $(document).height()) {
-                  $('footer').removeClass('nav-up').addClass('nav-down');
-              }
-          }
-
-          lastScrollTop = st;
-      }
     </script>
   </body>
 </html>
