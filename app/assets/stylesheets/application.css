@@ -112,7 +112,7 @@ footer {
   }
   .container {
     flex-direction: column;
-    /* padding: 0 auto; */
+    padding-top: 0;
     justify-content: center; /* Centrer horizontalement */
     align-items: flex-start; /* Centrer verticalement */
     height: 100vh; /* Remplit la hauteur de l'écran */
