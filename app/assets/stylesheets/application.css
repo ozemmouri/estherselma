@@ -25,7 +25,9 @@
 
    /* Hide vertical scrollbar initially */
  }
-
+a {
+  text-decoration: none;
+}
 .background {
   position: absolute;
   top: 0;
