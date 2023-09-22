@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'infos-pratiques', to: "pages#infopratiques"
   get 'billeterie', to: "pages#billeterie"
   get 'contact', to: "pages#contact"
+  get 'pages/home_mobile'
 end
