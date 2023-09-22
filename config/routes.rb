@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/home'
-  get 'pages/festival'
-  get 'pages/edition2023'
-  get 'pages/paroles'
-  get 'pages/tissu-culturel'
-  get 'pages/programme'
-  get 'pages/infos-pratiques'
-  get 'pages/billeterie'
-  get 'pages/contact'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
