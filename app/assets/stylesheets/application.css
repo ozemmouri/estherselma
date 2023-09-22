@@ -27,6 +27,17 @@
  }
 a {
   text-decoration: none;
+} body.dark-mode {
+   background-color: rgba(0, 0, 0, 1);
+   color: rgba(255, 255, 255, 1);
+ }
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+.background.light-mode {
+  background-image: url('E&S-frame-white.png');
+  /* Replace with your light mode image */
 }
 .background {
   position: absolute;
@@ -42,6 +53,9 @@ a {
   background-attachment: fixed;
   z-index: 2;
   /* Adjust this to control the sizing of the background image */
+}
+.background.dark-mode {
+  background-image: url('E&S-frame-black.png');
 }
 
 footer {
@@ -80,22 +94,46 @@ footer {
 .menu li {
   list-style: none;
 }
+.menu ul {
+  padding: 0;
+}
 .video {
   align-items: center;
   display: flex;
   flex: 1;
 }
+.title h1 {
+  width: 130%;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0px;
+}
+.title p {
+  margin-top:0px;
+}
 .right-side {
   display: flex;
   flex-direction: column;
   flex: 1;
-}
-.right-side li {
-  list-style: none;
+  margin-top: 25vh;
+  margin-left: 3rem;
 }
 
 .footer {
   align-content: center;
+}
+.layout-options {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1.5rem;
+}
+.layout-options ul {
+  text-align: right;
+  list-style: none;
+}
+.center {
+  margin-top: 3.5rem;
 }
 @media (max-width: 800px) {
   body {
