@@ -8,7 +8,7 @@
       </div>
       <div class="menu">
         <ul>
-          <li>Un festival engagé</li>
+          <%= link_to "Un festival engagé", festival_path %>
           <li>2023, édition pionnière</li>
           <li>Paroles</li>
           <li>Tissu culturel</li>
@@ -17,17 +17,17 @@
           <li>Billeterie</li>
           <li>Contact</li>
         </ul>
-        </div>
+      </div>
       <div class="footer-logo">
       </div>
     </div>
-      <div class="video">
-        <video width="320" height="240" controls>
-          <source src="/" type="">
-          <source src="/" type="">
-          Your browser does not support the video tag.
-        </video>
-      </div>
+    <div class="center">
+      <video width="320" height="240" controls>
+        <source src="/" type="">
+        <source src="/" type="">
+        Your browser does not support the video tag.
+      </video>
+    </div>
     <div class="right-side">
       <div class="header-logo">
       </div>
@@ -44,15 +44,4 @@
     </div>
   </div>
 </div>
-<div class="footer">
-  texte defilant
-</div>
-<script>
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > window.innerHeight) {
-            document.body.classList.add('active-footer');
-        } else {
-            document.body.classList.remove('active-footer');
-        }
-    });
-</script>
+<footer class="nav-down">LOL</footer>

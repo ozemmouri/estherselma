@@ -26,32 +26,32 @@
    /* Hide vertical scrollbar initially */
  }
 
- .background {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 100vh;
-   background-image: url('E&S-frame-white.png');
-   /* Replace with your image */
-   background-repeat: no-repeat;
-   background-size: cover;
-   /* Adjust this to control the sizing of the background image */
- }
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  background-image: url('E&S-frame-white.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 2;
+  /* Adjust this to control the sizing of the background image */
+}
 
- .footer {
-   position: fixed;
-   bottom: -100px;
-   /* Initially hide the footer off-screen */
-   left: 0;
-   width: 100%;
-   height: 100px;
-   /* Set the height of your footer */
-   background-color: red;
-   /* Set the background color to red */
-   transition: bottom 0.3s;
-   /* Add smooth transition effect */
- }
+footer {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Set the height of your footer */
+    background-color: red; /* Set the background color to red */
+    transition: bottom 0.3s; /* Add smooth transition effect */
+}
+
 
  /* Show the footer when scrolling down */
  body.active-footer .footer {
