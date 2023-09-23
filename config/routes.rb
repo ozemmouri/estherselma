@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get 'festival', to: "pages#festival"
   get 'edition2023', to: "pages#edition2023"
   get 'paroles', to: "pages#paroles"
-  get 'tissu-culturel', to: "pages#tissuculturel"
+  get 'tissu_culturel', to: "pages#tissuculturel"
   get 'programme', to: "pages#programme"
-  get 'infos-pratiques', to: "pages#infopratiques"
+  get 'infos_pratiques', to: "pages#infopratiques"
   get 'billeterie', to: "pages#billeterie"
   get 'contact', to: "pages#contact"
 end
