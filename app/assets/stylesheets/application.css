@@ -173,7 +173,15 @@ footer {
   background-color: red; /* Set the background color to red */
   transition: bottom 0.3s; /* Add smooth transition effect */
 }
-
+.programme p {
+  padding-top: 3.5rem;
+}
+.programme h5 {
+  text-align: right;
+}
+.dates {
+  padding-top: 3.2rem;
+}
 @media (max-width: 800px) {
   body {
     margin: 0;
