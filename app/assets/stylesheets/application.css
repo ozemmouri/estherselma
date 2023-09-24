@@ -27,6 +27,7 @@
  }
 a {
   text-decoration: none;
+  color: inherit;
 }
 body.dark-mode {
    background-color: rgba(0, 0, 0, 1);
@@ -86,7 +87,7 @@ a.dark-mode {
   background-image: url('E&S-frame-black.png');
 }
 .background.light-mode {
-  background-image: url('E&S-frame-white.png');
+  background-image: url('E&S-frame-black.png');
   /* Replace with your light mode image */
 }
 .container {
@@ -152,9 +153,8 @@ a.dark-mode {
 }
 .layout-options {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 1.5rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
 }
 .layout-options ul {
   text-align: right;
@@ -225,7 +225,7 @@ footer {
   .center p{
     max-width: 100vw;
     text-indent: 5vw;
-  } 
+  }
   video {
     height: 240px;
     width: 320px;
@@ -236,4 +236,35 @@ footer {
   footer {
     display: none;
   }
+}
+
+/* Your existing styles here */
+
+/* Style for the video elements */
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Style for the carousel container */
+#video-carousel {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  /* Updated */
+}
+
+/* Style for the video elements */
+.carousel-video {
+  display: none;
+  /* Updated */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Style for the active video */
+.carousel-item.active .carousel-video {
+  display: block;
+  /* Updated */
 }
