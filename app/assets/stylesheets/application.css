@@ -129,7 +129,7 @@ a.dark-mode {
 .center h4 {
   margin-left: 5rem;
 }
-.center p {
+.center  p {
   text-indent: 5rem;
 }
 .right-side {
@@ -186,10 +186,24 @@ footer {
 }
 .event1 {
   background-color: rgb(55,201,188);
-  
+  display: flex;
+  max-height: 153px;
 }
 .event .img {
   max-width: 300px;
+}
+.image {
+  flex: 1;
+}
+.text {
+  color: rgb(0, 0, 0);
+  flex: 1;
+  font-size: 0.6rem;
+  padding-left: 0.6rem;
+}
+.text p {
+  padding-top: 0;
+  text-indent: 0;
 }
 @media (max-width: 800px) {
   body {
