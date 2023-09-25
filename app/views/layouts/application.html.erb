@@ -40,32 +40,61 @@
         </div>
       </div>
     </div>
-
-
     <script>
-      // JavaScript to toggle dark/light mode
-      document.addEventListener('DOMContentLoaded', function() {
+    // JavaScript to toggle dark/light mode
+    document.addEventListener('DOMContentLoaded', function() {
         const toggleModeButton = document.getElementById('toggle-mode-button');
         const body = document.body;
 
         toggleModeButton.addEventListener('click', function() {
-          body.classList.toggle('dark-mode');
-          body.classList.toggle('light-mode');
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
 
-          // Toggle the background image class if needed
-          const background = document.querySelector('.background');
-          if (background) {
-            background.classList.toggle('dark-mode');
-            background.classList.toggle('light-mode');
-          }
+            // Toggle the background image class if needed
+            const background = document.querySelector('.background');
+            if (background) {
+                background.classList.toggle('dark-mode');
+                background.classList.toggle('light-mode');
+            }
 
-          // Update button text
-          const currentMode = body.classList.contains('dark-mode') ? 'Dark Mode' : 'Light Mode';
-          toggleModeButton.textContent = `INVERSER LES COULEURS`;
+            // Update button text
+            const currentMode = body.classList.contains('dark-mode') ? 'Dark Mode' : 'Light Mode';
+            toggleModeButton.textContent = `INVERSER LES COULEURS`;
         });
+    });
 
-      });
+    document.addEventListener("DOMContentLoaded", function () {
+    const linkElements = document.querySelectorAll("a");
 
-    </script>
+    linkElements.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            const href = link.getAttribute("href");
+            if (href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+                return;
+            }
+            event.preventDefault();
+
+            const colorClasses = ["full-screen-yellow", "full-screen-red", "full-screen-blue"];
+            const randomColorClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+
+            const colorDiv = document.createElement("div");
+            colorDiv.className = `${randomColorClass}`;
+            colorDiv.style.opacity = '1'; // set initial opacity to 1
+            document.body.appendChild(colorDiv);
+
+            // start the fading out transition
+            setTimeout(function () {
+                colorDiv.classList.add('fading');
+            }, 100);
+
+            // Remove the color div after the transition is complete and redirect
+            setTimeout(function () {
+                document.body.removeChild(colorDiv);
+                window.location.href = href;
+            }, 1100); // should be greater than transition duration
+        });
+    });
+});
+  </script>
   </body>
 </html>
