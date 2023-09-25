@@ -298,3 +298,45 @@ footer {
   display: block;
   /* Updated */
 }
+.full-screen-yellow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+}
+
+.full-screen-red {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.full-screen-blue {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+.full-screen-yellow,
+.full-screen-red,
+.full-screen-blue {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 1;
+  /* Make sure it covers all other elements */
+}
+.fading {
+  opacity: 0 !important;
+  transition: opacity 1s ease-in-out;
+}
