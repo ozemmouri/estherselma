@@ -76,7 +76,7 @@ a.dark-mode {
   width: 100vw;
   max-width: 100%;
   height: 100vh;
-  background-image: url('E&S-frame-white.png');
+  background-image: url('E&S-frame-white.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -85,10 +85,10 @@ a.dark-mode {
   /* Adjust this to control the sizing of the background image */
 }
 .background.dark-mode {
-  background-image: url('E&S-frame-black.png');
+  background-image: url('E&S-frame-black.svg');
 }
 .background.light-mode {
-  background-image: url('E&S-frame-black.png');
+  background-image: url('E&S-frame-black.svg');
   /* Replace with your light mode image */
 }
 .container {
