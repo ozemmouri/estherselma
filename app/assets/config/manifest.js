@@ -3,3 +3,7 @@
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
 //= link application.js
+//= link video1.mp4
+//= link video2.mp4
+//= link video3.mp4
+//= link video4.mp4
