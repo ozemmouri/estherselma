@@ -1,0 +1,16 @@
+
+  <div class="center">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel iaculis neque. Morbi at magna eu mi congue tempus. Ut at accumsan est. Nullam vehicula auctor auctor. Quisque justo nulla, maximus sed cursus non, luctus vitae ex. Donec ac lectus sed augue ultricies commodo sed id nisi. Sed sed luctus velit. Maecenas malesuada sodales magna, malesuada accumsan massa molestie sed. Nulla ultricies, lacus dignissim interdum auctor, quam ligula posuere augue, et iaculis mi felis at arcu. Cras convallis quam ut finibus varius. Interdum et malesuada fames ac ante ipsum primis in faucibus
+    </p>
+  </div>
+  <div class="right-side">
+    <div class="sub-menu">
+      <ul>
+        <li>Mercredi 15 novembre</li>
+        <li>Jeudi 16 novembre</li>
+        <li>Vendredi 17 novembre</li>
+        <li>Samedi 18 novembre</li>
+      </ul>
+    </div>
+  </div>

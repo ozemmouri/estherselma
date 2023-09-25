@@ -1,14 +1,70 @@
 <div class="center">
-  <video width="640" height="480" controls>
-    <source src="/" type="">
-    <source src="/" type="">
-    Your browser does not support the video tag.
-  </video>
+  <div id="video-carousel" class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <video id="video1" class="carousel-video">
+          <source src="/assets/video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="carousel-item">
+        <video id="video2" class="carousel-video">
+          <source src="/assets/video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="carousel-item">
+        <video id="video3" class="carousel-video">
+          <source src="/assets/video3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="carousel-item">
+        <video id="video4" class="carousel-video">
+          <source src="/assets/video4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="right-side">
   <div class="news">
+    <p id="next-video" style=" position: fixed; bottom: 4rem; right: 1.5rem; cursor: pointer;">EXTRAIT SUIVANT</p>
     <h5>Dernières actualités</h5>
     <p>Fusce eget elit vel purus lobortis commodo. In at tortor risus. Curabitur et fringilla lacus. </p>
     <p>Le programme complet est disponible en téléchargement dès aujourd’hui !</p>
   </div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const videos = document.querySelectorAll('.carousel-video');
+  let currentIndex = 0;
+
+  function showVideo(index) {
+    if (index < 0) {
+        index = carouselItems.length - 1;
+    } else if (index >= carouselItems.length) {
+        index = 0;
+    }
+
+    carouselItems[currentIndex].classList.remove('active'); // Remove active from the current item
+    videos[currentIndex].pause(); // Pause the current video
+    videos[currentIndex].currentTime = 0; // Reset the current video time
+
+    currentIndex = index;
+
+    carouselItems[currentIndex].classList.add('active'); // Add active to the new item
+    videos[currentIndex].setAttribute('controls', 'true'); // Add controls to the new active video
+    videos[currentIndex].play(); // Play the new active video
+  }
+
+  document.getElementById('next-video').addEventListener('click', function() {
+    showVideo(currentIndex + 1);
+  });
+
+  // Show the first video initially
+  showVideo(currentIndex);
+});
+</script>
