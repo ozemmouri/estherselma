@@ -129,8 +129,10 @@ a.dark-mode {
   overflow: scroll;
   scrollbar-width: none;
 }
-.center h4 {
+.center  h4:first-child {
   margin-top: 4.83rem;
+}
+.center h4 {
   margin-left: 5rem;
 }
 .center  p {
