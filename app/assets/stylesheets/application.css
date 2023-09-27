@@ -341,6 +341,9 @@ footer {
     margin-top: 10vh;
     width: 320px;
   }
+  .map {
+    width: auto;
+  }
   .image {
     max-width: 30vw;
     overflow: hidden;
