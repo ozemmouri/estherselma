@@ -231,7 +231,17 @@ footer {
     margin-top: -4vh;
   }
   .background {
-    background-image: none;
+    position: fixed;
+    top: 0;
+    left: 7px;
+    width: 100vw;
+    max-width: 100%;
+    background-image: url('E&S-mobile-frame-white.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: 2;
   }
   .container {
 /*    flex-direction: column;*/
@@ -278,6 +288,7 @@ footer {
   }
   video {
     height: 240px;
+    margin-left: -5vw;
     width: 320px;
   }
   .news {
