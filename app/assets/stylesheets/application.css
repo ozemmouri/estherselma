@@ -193,6 +193,9 @@ footer {
   background-color: red; /* Set the background color to red */
   transition: bottom 0.3s; /* Add smooth transition effect */
 }
+.mobile-inversion{
+  display: contents;
+}
 .programme p {
   padding-top: 3.5rem;
 }
