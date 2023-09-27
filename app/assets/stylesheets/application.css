@@ -56,7 +56,6 @@ a:hover {
 a:active {
   color: rgb(255,204,43);
 }
-
 a:focus {
   color:rgb(255, 204, 43);
 }
@@ -66,8 +65,21 @@ a.light-mode {
 a.dark-mode {
   color: rgba(255, 255, 255, 1);
 }
+a.active,
+a.active:visited,
+a.active:hover,
+a.active:active,
+a.active:focus {
+  color: rgb(255, 204, 43);
+  /* Yellow or any other color you prefer */
+}
 .blue-link {
   color: rgb(55,201,188)
+}
+.sub-menu a:active,
+.sub-menu a.active,
+.sub-menu a:focus {
+  color: rgb(55, 201, 188);
 }
 .background {
   position: fixed;
@@ -365,7 +377,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: yellow;
+  background-color: rgb(255, 204, 43);
 }
 
 .full-screen-red {
@@ -374,7 +386,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: rgb(199, 14, 14);
 }
 
 .full-screen-blue {
@@ -383,7 +395,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: rgb(55, 201, 188);
 }
 .full-screen-yellow,
 .full-screen-red,
