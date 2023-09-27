@@ -234,6 +234,9 @@ footer {
 .mobile-inversion {
   display: contents;
 }
+#manifesto, #essaouira, #roni-Elkabetz, #mobilisation, #pillier, #cinema, #echange{
+  scroll-margin-top: 4.83rem;
+}
 @media (max-width: 800px) {
   body {
     margin: 0;
