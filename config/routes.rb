@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'programme16', to: "pages#programme16"
   get 'programme17', to: "pages#programme17"
   get 'programme18', to: "pages#programme18"
-  get 'infos_pratiques', to: "pages#infopratiques"
+  get 'infos_pratiques', to: "pages#infospratiques"
   get 'billeterie', to: "pages#billeterie"
   get 'contact', to: "pages#contact"
 end
