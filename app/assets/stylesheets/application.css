@@ -156,7 +156,7 @@ a.active:focus {
   flex: 1;
   margin-left: 3rem;
 }
-.right-side ul {
+.right-side ul{
   margin: 0;
 }
 .right-side li {
@@ -169,7 +169,7 @@ a.active:focus {
 }
 .sub-menu{
   margin-top: 8.3rem;
-  max-width: 15vw;
+  max-width: 250px;
 }
 .layout-options {
   position: fixed;
@@ -324,14 +324,17 @@ footer {
   .news {
     display: none;
   }
-  .sub-menu {
+  .sub-menu, .dates {
     margin-top: 2vh;
   }
   .right-side .sub-menu ul{
     padding: 0;
   }
+  .sub-menu {
+    max-width: 80vw;
+  }
   .sub-menu li{
-    display: inline-block;
+    display: inline;
   }
   footer {
     display: none;
