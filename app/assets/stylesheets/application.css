@@ -267,13 +267,17 @@ footer {
     margin: 0;
     padding: 0;
   }
+  .mobile-inversion{
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .center {
     display: flex;
     flex: none;
     flex-direction: column;
     height: 60vh;
     max-width: 100vw;
-    width: 90vw;
+    width: 80vw;
     margin: 0;
     margin-right: 5px;
   }
@@ -289,10 +293,14 @@ footer {
   video {
     height: 240px;
     margin-left: -5vw;
+    margin-top: 10vh;
     width: 320px;
   }
   .news {
     display: none;
+  }
+  .sub-menu li{
+    display: inline-block;
   }
   footer {
     display: none;
