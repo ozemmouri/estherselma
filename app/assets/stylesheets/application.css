@@ -305,6 +305,9 @@ footer {
   }
   .right-side {
     margin: 0;
+    width: 100%;
+    overflow-x: auto; /* Active le défilement horizontal */
+    white-space: nowrap;
   }
   .news {
     display: none;
