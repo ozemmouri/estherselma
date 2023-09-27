@@ -237,6 +237,9 @@ footer {
 .mobile-inversion {
   display: contents;
 }
+.mobile-white-margin {
+  display: none;
+}
 @media (max-width: 800px) {
   body {
     margin: 0;
@@ -251,22 +254,31 @@ footer {
   }
   .background {
     position: fixed;
-    top: 0;
-    left: 7px;
-    width: 100vw;
-    max-width: 100%;
-    background-image: url('E&S-mobile-frame-white.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    z-index: 2;
-  }
+      top: 1%;
+      left: 3%;
+      width: 100vw;
+      max-width: 100%;
+      background-image: url('E&S-mobile-frame-white.svg');
+      background-repeat: no-repeat;
+      background-size: inherit;
+      background-position: inherit;
+      background-attachment: inherit;
+      z-index: 2;
+      object-fit: contain;
+    }
+    .background.dark-mode {
+      background-image: url('E&S-mobile-frame-black.svg');
+    }
+
+    .background.light-mode {
+      background-image: url('E&S-mobile-frame-black.svg');
+      /* Replace with your light mode image */
+    }
   .container {
 /*    flex-direction: column;*/
     padding-top: 0;
     justify-content: center; /* Centrer horizontalement */
-/*    align-items: flex-start; /* Centrer verticalement */*/
+/*    align-items: flex-start; /* Centrer verticalement */
     height: 100vh; /* Remplit la hauteur de l'écran */
     max-height: 100vh;
     margin: 20px 30px;
@@ -338,6 +350,21 @@ footer {
   }
   footer {
     display: none;
+  }
+  #toggle-mode-button {
+    display: none;
+  }
+  .layout-options {
+    bottom: 0.5rem;
+  }
+  .mobile-white-margin{
+    bottom: 0;
+    position: absolute;
+    margin-left: -3%;
+    display: block;
+    height: 6rem;
+    width: 100%;
+    background-color: white;
   }
 }
 
@@ -416,3 +443,70 @@ footer {
 ::-webkit-scrollbar {
   width: 0px;
 }
+/* ... your other CSS ... */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  position:relative;
+  z-index: 10;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: grey;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked+.slider {
+  background-color: black;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.mobileShow {
+  display: none;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+  .mobileHide {
+    display: none;
+  }
+  .mobileShow {display: inline;}
+}
+
