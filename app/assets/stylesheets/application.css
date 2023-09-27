@@ -116,6 +116,7 @@ a.active:focus {
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-width: 300px;
 }
 .title h1 {
   width: 130%;
@@ -234,8 +235,16 @@ footer {
   padding-top: 0;
   text-indent: 0;
 }
+#contact {
+  text-indent: 0;
+  margin-top: 4.83rem;
+  margin-left: 4.5rem;
+}
 .mobile-inversion {
   display: contents;
+}
+#manifesto, #essaouira, #roni-Elkabetz, #mobilisation, #pillier, #cinema, #echange{
+  scroll-margin-top: 4.83rem;
 }
 .mobile-white-margin {
   display: none;
@@ -288,6 +297,9 @@ footer {
   .left-side {
     flex: none;
   }
+  .menu {
+    margin-top: 20px;
+  }
   .menu ul {
     column-count: 2;
     column-gap: 20px;
@@ -306,23 +318,37 @@ footer {
     display: flex;
     flex: none;
     flex-direction: column;
-    height: 60vh;
+    height: 50vh;
     max-width: 100vw;
     width: 80vw;
     margin: 0;
     margin-right: 5px;
   }
   .center h4:first-child{
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .center h4{
     margin-left: 2vw;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     max-width: 100vw;
   }
   .center p{
+    margin-top: 1rem;
     max-width: 100vw;
     text-indent: 5vw;
+  }
+  .programme > p:first-child {
+    padding-top: 0;
+  }
+  .center h5{
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+  .center ul {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin: 0;
+    padding: 0;
   }
   video {
     height: 240px;
@@ -330,8 +356,27 @@ footer {
     margin-top: 10vh;
     width: 320px;
   }
+  .map {
+    width: auto;
+  }
+  .image {
+    max-width: 30vw;
+    overflow: hidden;
+  }
+  .text {
+    margin-left: 68px;
+    max-width: 50vw;
+    padding-right: 0px;
+    overflow: scroll;
+  }
+  .text p {
+    text-indent: 0;
+  }
   .right-side {
     margin: 0;
+    width: 80%;
+    overflow-x: auto; /* Active le défilement horizontal */
+    white-space: nowrap;
   }
   .news {
     display: none;
@@ -339,7 +384,13 @@ footer {
   .sub-menu, .dates {
     margin-top: 2vh;
   }
-  .right-side .sub-menu ul{
+  .right-side li {
+    padding-right: 15px;
+  }
+  .right-side li:last-child {
+  margin-right: 0; /* Supprime la marge du dernier élément */
+  }
+  .right-side .sub-menu ul {
     padding: 0;
   }
   .sub-menu {
