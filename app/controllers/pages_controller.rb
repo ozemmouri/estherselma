@@ -26,7 +26,7 @@ class PagesController < ApplicationController
   def programme18
   end
 
-  def infopratiques
+  def infospratiques
   end
 
   def billeterie
