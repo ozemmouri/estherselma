@@ -385,6 +385,7 @@ footer {
     flex-direction: column-reverse;
   }
   .center {
+    top: inherit;
     display: flex;
     flex: none;
     flex-direction: column;
