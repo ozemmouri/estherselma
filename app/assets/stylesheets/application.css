@@ -82,7 +82,7 @@ a.active:focus {
   color: rgb(55, 201, 188);
 }
 .background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -93,6 +93,7 @@ a.active:focus {
   background-position: center center;
   background-attachment: fixed;
   z-index: 2;
+  overflow: scroll;
   /* Adjust this to control the sizing of the background image */
 }
 .background.dark-mode {
@@ -575,4 +576,17 @@ input:checked+.slider:before {
 }
 #fullscreen-svg {
   background: url('E&S-landing-page.svg') center/cover no-repeat;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+  z-index: 1;
+  height: 100px;
+  /* Adjust as needed to ensure it is below the SVG frame */
+  display: none;
+  /* Initially hidden */
 }
