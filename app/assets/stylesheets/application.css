@@ -207,7 +207,7 @@ table {
   position: fixed;
   bottom: 3.5rem;
   right: 1.5rem;
-  z-index: 5;
+  z-index: 9;
 }
 .layout-options ul {
   text-align: right;
@@ -328,6 +328,7 @@ footer {
     margin: 20px 30px;
     flex: none;
     display: block;
+    position: fixed;
   }
   .left-side {
     flex: none;
@@ -445,10 +446,9 @@ footer {
   }
   .mobile-white-margin{
     bottom: 0;
-    position: absolute;
-    margin-left: -3%;
+    position: fixed;
     display: block;
-    height: 6rem;
+    height: 8vh;
     width: 100%;
     background-color: white;
   }
