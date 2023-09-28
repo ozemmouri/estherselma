@@ -1,3 +1,4 @@
+<div id="fullscreen-svg" class="fullscreen-svg"></div>
 <div class="center">
   <div id="video-carousel" class="carousel">
     <div class="carousel-inner">
@@ -97,5 +98,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+  document.addEventListener("DOMContentLoaded", function () {
+  // After 3 seconds, start fading out the fullscreen SVG
+  setTimeout(function() {
+    const svgElement = document.getElementById('fullscreen-svg');
+    if (svgElement) {
+      svgElement.style.opacity = '0';
 
+      // After transition is complete (1s), remove the element from the DOM
+      setTimeout(function() {
+        svgElement.parentNode.removeChild(svgElement);
+      }, 1000);
+    }
+  }, 3000);
+});
 </script>

@@ -261,6 +261,9 @@ footer {
     font-size: 1rem;
     margin-top: -4vh;
   }
+  #fullscreen-svg {
+    background: url('E&S-landing-page-mobile.svg') center/cover no-repeat;
+  }
   .background {
     position: fixed;
       top: 1%;
@@ -560,4 +563,16 @@ input:checked+.slider:before {
   }
   .mobileShow {display: inline;}
 }
-
+.fullscreen-svg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+#fullscreen-svg {
+  background: url('E&S-landing-page.svg') center/cover no-repeat;
+}
