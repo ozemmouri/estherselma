@@ -92,7 +92,7 @@ a.active:focus {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  z-index: 2;
+  z-index: 99;
   /* Adjust this to control the sizing of the background image */
 }
 .background.dark-mode {
@@ -144,6 +144,19 @@ a.active:focus {
   margin-left: -50px;
   overflow: scroll;
   scrollbar-width: none;
+}
+.center-video {
+  height: 75vh;
+  margin-top: 3.5rem;
+  flex: 2 1 0%;
+  max-width: 50vw;
+  margin-left: -50px;
+  overflow: visible;
+  scrollbar-width: none;
+}
+.center-video, .right-side {
+    position: relative; /* Position relative pour superposer sur le carousel */
+    z-index: 1; /* Place ces éléments au-dessus du carousel */
 }
 .center  h4:first-child {
   margin-top: 4.83rem;
@@ -440,12 +453,19 @@ footer {
 }
 
 /* Style for the carousel container */
-#video-carousel {
+/*#video-carousel {
   max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  /* Updated */
+}*/
+#video-carousel {
+  width: 60vw; /* Définir la largeur du carousel à 60% de la largeur de la fenêtre d'affichage */
+  z-index: -1; /* Place le carousel en arrière-plan */
+  position: absolute; /* Vous permet de superposer les éléments */
+  top: 0; /* Positionne le carousel en haut de la page */
+  left: -5vw; /* Centrer le carousel */
+  overflow: visible;
 }
 
 /* Style for the video elements */
