@@ -503,6 +503,13 @@ footer {
     width: 100%;
     background-color: white;
   }
+  #contact {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+  .center p:first-child {
+    margin-top: 1rem;
+  }
 }
 
 /* Your existing styles here */
