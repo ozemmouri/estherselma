@@ -3,26 +3,26 @@
   <div id="video-carousel" class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <video id="video1" class="carousel-video">
+        <video id="video1" class="carousel-video" muted>
           <source src="<%= asset_path 'video1.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
       <!-- Similar changes for other videos -->
       <div class="carousel-item">
-        <video id="video2" class="carousel-video">
+        <video id="video2" class="carousel-video" muted>
           <source src="<%= asset_path 'video2.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
       <div class="carousel-item">
-        <video id="video3" class="carousel-video">
+        <video id="video3" class="carousel-video" muted>
           <source src="<%= asset_path 'video3.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
       <div class="carousel-item">
-        <video id="video4" class="carousel-video">
+        <video id="video4" class="carousel-video" muted>
           <source src="<%= asset_path 'video4.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -36,11 +36,11 @@
     <h5>Dernières actualités</h5>
     <table>
       <tr style="padding-bottom: 1rem">
-        <td><em>12/08</em></td>
+        <td class="news-date">12/08</td>
         <td style="padding-left: 1rem">Fusce eget elit vel purus lobortis commodo. In at tortor risus. Curabitur et fringilla lacus.</td>
       </tr>
       <tr>
-        <td><em>10/08</em></td>
+        <td class="news-date">10/08</td>
         <td style="padding-left: 1rem">Le programme complet est disponible en téléchargement dès aujourd’hui !</td>
       </tr>
     </table>
