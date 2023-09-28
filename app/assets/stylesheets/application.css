@@ -127,6 +127,9 @@ a.active:focus {
 .title p {
   margin-top:0px;
 }
+.menu {
+  margin-top: 2rem;
+}
 .menu li {
   list-style: none;
 }
@@ -165,8 +168,14 @@ a.active:focus {
 }
 .news {
   box-sizing: border-box;
-  margin-top: 4.83rem;
+  margin-top: 7.83rem;
   width: 250px;
+}
+table {
+  margin-left: -3.3rem;
+}
+.news-date {
+  font-size: 0.8rem;
 }
 .sub-menu{
   margin-top: 8.3rem;
