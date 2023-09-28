@@ -281,6 +281,38 @@ footer {
 .mobile-white-margin {
   display: none;
 }
+/* Style for the video elements */
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Style for the carousel container */
+/*#video-carousel {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}*/
+#video-carousel {
+  width: 70vw; /* Définir la largeur du carousel à 60% de la largeur de la fenêtre d'affichage */
+  z-index: -1; /* Place le carousel en arrière-plan */
+  position: absolute; /* Vous permet de superposer les éléments */
+  top: 0; /* Positionne le carousel en haut de la page */
+  left: -5vw; /* Centrer le carousel */
+  overflow: visible;
+}
+
+/* Style for the video elements */
+.carousel-video {
+  display: none;
+  /* Updated */
+  max-width: 100%;
+  /*object-fit: contain;*/
+  position: relative;
+  z-index: 0;
+}
+
 @media (max-width: 800px) {
   body {
     margin: 0;
@@ -386,16 +418,18 @@ footer {
     margin: 0;
     padding: 0;
   }
-/*  video {
-    height: 240px;
+  video {
+/*    height: 240px;
     margin-left: -5vw;
     margin-top: 10vh;
-    width: 100vw;
-  }*/
+*/    width: 80vw;
+  }
   #video-carousel {
+    width: 100vw;
     max-width: 100vw;
-    margin-left: 25vw;
+    margin-left: 15vw;
     padding-top: 20vw;
+    left: 0;
   }
   .carousel {
     width: 100vw;
@@ -464,37 +498,6 @@ footer {
 
 /* Your existing styles here */
 
-/* Style for the video elements */
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Style for the carousel container */
-/*#video-carousel {
-  max-width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-}*/
-#video-carousel {
-  width: 70vw; /* Définir la largeur du carousel à 60% de la largeur de la fenêtre d'affichage */
-  z-index: -1; /* Place le carousel en arrière-plan */
-  position: absolute; /* Vous permet de superposer les éléments */
-  top: 0; /* Positionne le carousel en haut de la page */
-  left: -5vw; /* Centrer le carousel */
-  overflow: visible;
-}
-
-/* Style for the video elements */
-.carousel-video {
-  display: none;
-  /* Updated */
-  max-width: 100%;
-  /*object-fit: contain;*/
-  position: relative;
-  z-index: 0;
-}
 
 /* Style for the active video */
 .carousel-item.active .carousel-video {
