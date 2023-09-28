@@ -140,13 +140,15 @@ a.active:focus {
   padding: 0;
 }
 .center {
-  height: 65vh;
-  margin-top: 5.1rem;
+  height: 67vh;
+  top: 9.9rem;
   flex: 2 1 0%;
   max-width: 50vw;
   margin-left: -50px;
   overflow: scroll;
+  position: relative;
   scrollbar-width: none;
+  z-index: 9;
 }
 .center-video {
   height: 75vh;
@@ -165,7 +167,7 @@ a.active:focus {
     z-index: 2; /* Met ces éléments au-dessus du carousel vidéo */
 }
 .center  h4:first-child {
-  margin-top: 4.83rem;
+  margin-top: 0;
 }
 .center h4 {
   margin-left: 5rem;
@@ -205,7 +207,7 @@ table {
 }
 .layout-options {
   position: fixed;
-  bottom: 3.5rem;
+  bottom: 1.5rem;
   right: 1.5rem;
   z-index: 9;
 }
