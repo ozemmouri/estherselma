@@ -82,7 +82,8 @@ a.active:focus {
   color: rgb(55, 201, 188);
 }
 .background {
-  position: fixed;
+  height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -92,7 +93,7 @@ a.active:focus {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  z-index: 99;
+  z-index: 1;
   /* Adjust this to control the sizing of the background image */
 }
 .background.dark-mode {
@@ -108,6 +109,7 @@ a.active:focus {
   flex-direction: row;
   margin: 5rem;
   width: 100%;
+  z-index: 6;
 }
 .container > h1 {
   padding-bottom: -15px;
@@ -148,11 +150,10 @@ a.active:focus {
 }
 .center-video {
   height: 75vh;
-  margin-top: 3.5rem;
   flex: 2 1 0%;
   max-width: 50vw;
   margin-left: -50px;
-  overflow: visible;
+  /*overflow: visible;*/
   scrollbar-width: none;
 }
 .center-video, .right-side {
@@ -177,6 +178,7 @@ a.active:focus {
   flex-direction: column;
   flex: 1;
   margin-left: 3rem;
+  z-index: 5;
 }
 .right-side ul{
   margin: 0;
@@ -185,9 +187,11 @@ a.active:focus {
   list-style: none;
 }
 .news {
+  position: relative;
   box-sizing: border-box;
   margin-top: 8.3rem;
   width: 250px;
+  z-index: 4;
 }
 .news-date {
   font-size: 0.8rem;
@@ -203,6 +207,7 @@ table {
   position: fixed;
   bottom: 3.5rem;
   right: 1.5rem;
+  z-index: 5;
 }
 .layout-options ul {
   text-align: right;
@@ -258,7 +263,7 @@ footer {
   margin-bottom: 0.3rem;
 }
 .text p {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   padding-top: 0;
   text-indent: 0;
 }
@@ -465,7 +470,7 @@ footer {
   position: relative;
 }*/
 #video-carousel {
-  width: 60vw; /* Définir la largeur du carousel à 60% de la largeur de la fenêtre d'affichage */
+  width: 70vw; /* Définir la largeur du carousel à 60% de la largeur de la fenêtre d'affichage */
   z-index: -1; /* Place le carousel en arrière-plan */
   position: absolute; /* Vous permet de superposer les éléments */
   top: 0; /* Positionne le carousel en haut de la page */
@@ -478,7 +483,9 @@ footer {
   display: none;
   /* Updated */
   max-width: 100%;
-  object-fit: contain;
+  /*object-fit: contain;*/
+  position: relative;
+  z-index: 0;
 }
 
 /* Style for the active video */
