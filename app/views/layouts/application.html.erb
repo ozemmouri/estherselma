@@ -177,11 +177,14 @@
     });
     document.addEventListener('DOMContentLoaded', function() {
       const footer = document.querySelector('.footer');
+      const center = document.querySelector('.center'); // Add this line
       window.addEventListener('scroll', function() {
         if (window.scrollY > 0) { // Adjust the condition as per your requirement
           footer.style.display = 'flex';
+          center.style.zIndex = '-1'; // Update the zIndex when the footer is visible.
         } else {
           footer.style.display = 'none';
+          center.style.zIndex = '9'; // Reset the zIndex when the footer is not visible.
         }
       });
     });
