@@ -50,36 +50,60 @@
           </div>
         </div>
       <div class="background"> </div>
+      <div class="footer">
+        <div class="column1">
+          <ul>
+            <li>ESTHER ET SELMA</li>
+            <li>Festival de cinéma de l'exil</li>
+            <li>Essaouira, Maroc</li>
+            <li>édition2023</li>
+          </ul>
+        </div>
+        <div class="column2">
+          <ul>
+            <li>Tout droits réservés 2023</li>
+          </ul>
+        </div>
+        <div class="column3">
+          <ul>
+            <li>contact@estheretselma.ma</li>
+            <br>
+            <li>Instagram</li>
+            <li>Facebook</li>
+          </ul>
+        </div>
+      </div>
+      </body>
     <script>
     // JavaScript to toggle dark/light mode
     document.addEventListener('DOMContentLoaded', function() {
-    const toggleModeButton = document.getElementById('toggle-mode-button');
-    const themeSwitch = document.getElementById('checkbox');
-    const body = document.body;
+      const toggleModeButton = document.getElementById('toggle-mode-button');
+      const themeSwitch = document.getElementById('checkbox');
+      const body = document.body;
 
-    function toggleMode() {
-        body.classList.toggle('dark-mode');
-        body.classList.toggle('light-mode');
+      function toggleMode() {
+          body.classList.toggle('dark-mode');
+          body.classList.toggle('light-mode');
 
-        // Toggle the background image class if needed
-        const background = document.querySelector('.background');
-        if (background) {
-            background.classList.toggle('dark-mode');
-            background.classList.toggle('light-mode');
-        }
+          // Toggle the background image class if needed
+          const background = document.querySelector('.background');
+          if (background) {
+              background.classList.toggle('dark-mode');
+              background.classList.toggle('light-mode');
+          }
 
-        // Update the state of the checkbox to reflect the mode.
-        themeSwitch.checked = body.classList.contains('dark-mode');
-    }
+          // Update the state of the checkbox to reflect the mode.
+          themeSwitch.checked = body.classList.contains('dark-mode');
+      }
 
-    toggleModeButton.addEventListener('click', function() {
-        toggleMode();
+      toggleModeButton.addEventListener('click', function() {
+          toggleMode();
+      });
+
+      themeSwitch.addEventListener('change', function() {
+          toggleMode();
+      });
     });
-
-    themeSwitch.addEventListener('change', function() {
-        toggleMode();
-    });
-  });
 
     document.addEventListener("DOMContentLoaded", function () {
     const linkElements = document.querySelectorAll("a");
@@ -110,47 +134,57 @@
     });
     document.addEventListener("DOMContentLoaded", function () {
     // Get all links in the menu
-    const menuLinks = document.querySelectorAll(".menu a");
+      const menuLinks = document.querySelectorAll(".menu a");
 
-    menuLinks.forEach((link) => {
-      // Add click event listener to each link
-      link.addEventListener("click", function (event) {
-        // Remove 'active' class from all menu links
-        menuLinks.forEach((lnk) => lnk.classList.remove("active"));
+      menuLinks.forEach((link) => {
+        // Add click event listener to each link
+        link.addEventListener("click", function (event) {
+          // Remove 'active' class from all menu links
+          menuLinks.forEach((lnk) => lnk.classList.remove("active"));
 
-        // Add 'active' class to the clicked link
-        link.classList.add("active");
-      });
-
-      // Check if the link's href matches the current URL
-      if (link.href === window.location.href) {
-        // Add 'active' class to the matching link
-        link.classList.add("active");
-      }
-    });
-    // ... (other event listeners)
-  });
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get all links in the sub-menu
-        const submenuLinks = document.querySelectorAll(".sub-menu a");
-
-        submenuLinks.forEach((link) => {
-          // Add click event listener to each link
-          link.addEventListener("click", function (event) {
-            // Remove 'active' class from all sub-menu links
-            submenuLinks.forEach((lnk) => lnk.classList.remove("active"));
-
-            // Add 'active' class to the clicked link
-            link.classList.add("active");
-          });
-
-          // Check if the link's href matches the current URL
-          if (link.href === window.location.href) {
-            // Add 'active' class to the matching link
-            link.classList.add("active");
-          }
+          // Add 'active' class to the clicked link
+          link.classList.add("active");
         });
+
+        // Check if the link's href matches the current URL
+        if (link.href === window.location.href) {
+          // Add 'active' class to the matching link
+          link.classList.add("active");
+        }
       });
+      // ... (other event listeners)
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all links in the sub-menu
+      const submenuLinks = document.querySelectorAll(".sub-menu a");
+
+      submenuLinks.forEach((link) => {
+        // Add click event listener to each link
+        link.addEventListener("click", function (event) {
+          // Remove 'active' class from all sub-menu links
+          submenuLinks.forEach((lnk) => lnk.classList.remove("active"));
+
+          // Add 'active' class to the clicked link
+          link.classList.add("active");
+        });
+
+        // Check if the link's href matches the current URL
+        if (link.href === window.location.href) {
+          // Add 'active' class to the matching link
+          link.classList.add("active");
+        }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const footer = document.querySelector('.footer');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) { // Adjust the condition as per your requirement
+          footer.style.display = 'flex';
+        } else {
+          footer.style.display = 'none';
+        }
+      });
+    });
   </script>
   </body>
 </html>
