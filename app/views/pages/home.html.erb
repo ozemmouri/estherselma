@@ -32,7 +32,9 @@
 </div>
 <div class="right-side">
   <div class="news">
-    <p id="next-video" style=" position: fixed; bottom: 4rem; right: 1.5rem; cursor: pointer;">EXTRAIT SUIVANT</p>
+    <p id="next-video" style=" position: fixed; bottom: 3.7rem; right: 1.5rem; cursor: pointer;">EXTRAIT SUIVANT</p>
+    <p id="toggle-sound" style=" position: fixed; bottom: 2.2rem; right: 1.5rem; cursor: pointer;">ACTIVER LE SON
+    </p>
     <h5>Dernières actualités</h5>
     <table>
       <tr style="padding-bottom: 1rem">
@@ -51,6 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const carouselItems = document.querySelectorAll('.carousel-item');
   const videos = document.querySelectorAll('.carousel-video');
   let currentIndex = 0;
+
+  //Code pour activer le son
+  document.getElementById('toggle-sound').addEventListener('click', function() {
+  const activeVideo = document.querySelector('.carousel-item.active .carousel-video');
+
+  if (activeVideo.muted) {
+    activeVideo.muted = false;
+    this.innerText = "DÉSACTIVER LE SON";
+  } else {
+    activeVideo.muted = true;
+    this.innerText = "ACTIVER LE SON";
+  }
+  });
+
 
   function showVideo(index) {
     if (index < 0) {
@@ -112,4 +128,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 3000);
 });
+
 </script>

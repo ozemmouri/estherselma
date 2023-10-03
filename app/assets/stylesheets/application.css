@@ -255,7 +255,7 @@ footer {
   background-color: rgb(55,201,188);
   display: flex;
   max-height: 153px;
-  overflow: hidden;
+  overflow: scroll;
 }
 .event .img {
   max-width: 300px;
