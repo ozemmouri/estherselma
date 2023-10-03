@@ -125,7 +125,7 @@ a.active:focus {
   z-index: 1;
   max-width: 100%;
   width: 100vw;
-  height: 20%;
+  height: 24%;
 }
 .background.dark-mode {
   background-image: url('E&S-frame-black.svg');
