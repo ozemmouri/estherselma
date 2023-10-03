@@ -87,10 +87,15 @@
           body.classList.toggle('light-mode');
 
           // Toggle the background image class if needed
-          const background = document.querySelector('.background');
-          if (background) {
-              background.classList.toggle('dark-mode');
-              background.classList.toggle('light-mode');
+          const background_top = document.querySelector('.background-top');
+          if (background_top) {
+              background_top.classList.toggle('dark-mode');
+              background_top.classList.toggle('light-mode');
+          }
+          const background_bottom = document.querySelector('.background-bottom');
+          if (background_bottom) {
+              background_bottom.classList.toggle('dark-mode');
+              background_bottom.classList.toggle('light-mode');
           }
 
           // Update the state of the checkbox to reflect the mode.

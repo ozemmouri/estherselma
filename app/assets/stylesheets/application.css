@@ -120,18 +120,25 @@ a.active:focus {
   background-image: url('white-selma-bottom.svg');
   background-repeat: no-repeat;
   background-size: auto;
-  /* background-position: center center; */
+  background-position: bottom;
   /* background-attachment: fixed; */
   z-index: 1;
   max-width: 100%;
   width: 100vw;
   height: 24%;
 }
-.background.dark-mode {
-  background-image: url('E&S-frame-black.svg');
+.background-top.dark-mode {
+  background-image: url('black-esther-top.svg');
 }
-.background.light-mode {
-  background-image: url('E&S-frame-black.svg');
+.background-bottom.dark-mode {
+  background-image: url('black-selma-bottom.svg');
+}
+.background-top.light-mode {
+  background-image: url('black-esther-top.svg');
+  /* Replace with your light mode image */
+}
+.background-bottom.light-mode {
+  background-image: url('black-selma-bottom.svg');
   /* Replace with your light mode image */
 }
 .container {
@@ -255,7 +262,7 @@ table {
   cursor:pointer;
   margin: 0;
   position: fixed;
-  bottom: 1.5rem;
+  bottom: 3.5rem;
   right: 21px;
 }
 .center p b {
