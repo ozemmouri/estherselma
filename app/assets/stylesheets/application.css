@@ -83,7 +83,7 @@ a.active:focus {
 .sub-menu a:focus {
   color: rgb(55, 201, 188);
 }
-.background {
+/* .background {
   height: 101%;
   position: absolute;
   top: 0;
@@ -96,7 +96,15 @@ a.active:focus {
   background-position: center center;
   background-attachment: fixed;
   z-index: 1;
-  /* Adjust this to control the sizing of the background image */
+} */
+.footer-height {
+  height: 101%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  z-index: 1;
 }
 .background-top {
   max-width: 100%;
@@ -732,7 +740,7 @@ input:checked+.slider:before {
   color: white;
   text-align: center;
   z-index: 0;
-  height: 100px;
+  height: 7.7rem;
   /* Adjust as needed to ensure it is below the SVG frame */
   display: none;
   justify-content: center;
@@ -746,7 +754,4 @@ input:checked+.slider:before {
   text-align: left;
   font-size: 0.9rem;
 }
-.footer .column2 {
-  margin-left:6rem;
-  margin-right: 6rem;
-}
+
