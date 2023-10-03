@@ -198,6 +198,10 @@ a.active:focus {
   width: 250px;
   z-index: 4;
 }
+.news h5 {
+  margin-bottom: 0;
+  padding-top: 7px;
+}
 .news-date {
   font-size: 0.8rem;
 }
