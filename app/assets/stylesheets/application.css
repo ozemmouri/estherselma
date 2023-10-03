@@ -98,6 +98,35 @@ a.active:focus {
   z-index: 1;
   /* Adjust this to control the sizing of the background image */
 }
+.background-top {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url('white-esther-top.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  /* background-position: center center; */
+  /* background-attachment: fixed; */
+  z-index: 1;
+  width: 24vw;
+  height: 100%;
+  /* Adjust this to control the sizing of the background image */
+}
+.background-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url('white-selma-bottom.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  /* background-position: center center; */
+  /* background-attachment: fixed; */
+  z-index: 1;
+  max-width: 100%;
+  width: 100vw;
+  height: 20%;
+}
 .background.dark-mode {
   background-image: url('E&S-frame-black.svg');
 }
@@ -211,7 +240,7 @@ table {
 .layout-options {
   position: fixed;
   bottom: 1.5rem;
-  right: 1.5rem;
+  left: 1rem;
   z-index: 9;
 }
 .layout-options ul {
@@ -335,26 +364,41 @@ footer {
   }
   .background {
     position: fixed;
-      top: 1%;
-      left: 3%;
-      width: 100vw;
-      max-width: 100%;
-      background-image: url('E&S-mobile-frame-white.svg');
-      background-repeat: no-repeat;
-      background-size: inherit;
-      background-position: inherit;
-      background-attachment: inherit;
-      z-index: 2;
-      object-fit: contain;
+    width: 100vw;
+    max-width: 100%;
+    background-image: none;
+    z-index: 2;
+    object-fit: contain;
     }
     .background.dark-mode {
-      background-image: url('E&S-mobile-frame-black.svg');
+      background-image: none;
     }
 
     .background.light-mode {
-      background-image: url('E&S-mobile-frame-black.svg');
+      background-image: none;
       /* Replace with your light mode image */
     }
+  .red {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    background-color: rgb(199, 14, 14);
+  }
+  .mobile-home {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-mobile {
+    text-align: left;
+    width: 100%;
+  }
+  .menu-mobile ul {
+    list-style: none;
+  }
   .container {
 /*    flex-direction: column;*/
     padding-top: 0;
@@ -392,7 +436,7 @@ footer {
     display: flex;
     flex: none;
     flex-direction: column;
-    height: 50vh;
+    height: 45vh;
     max-width: 100vw;
     width: 80vw;
     margin: 0;
