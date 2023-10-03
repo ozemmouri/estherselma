@@ -424,6 +424,9 @@ footer {
     z-index: 8;
     background-color: rgb(199, 14, 14);
   }
+  .footer {
+    display: none !important;
+  }
   .mobile-home {
     display: flex !important;
     flex-direction: column;
