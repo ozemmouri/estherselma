@@ -254,6 +254,9 @@ table {
 #toggle-mode-button {
   cursor:pointer;
   margin: 0;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 21px;
 }
 .center p b {
   margin-bottom: 0;
