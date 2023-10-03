@@ -284,9 +284,10 @@ footer {
 .text h6 {
   margin-top: 0;
   margin-bottom: 0.3rem;
+  font-size: 0.9rem;
 }
 .text p {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   padding-top: 0;
   text-indent: 0;
 }
