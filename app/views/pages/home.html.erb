@@ -69,23 +69,23 @@
   </div>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  const videos = document.querySelectorAll('.carousel-video');
-  let currentIndex = 0;
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const videos = document.querySelectorAll('.carousel-video');
+    let currentIndex = 0;
 
-  //Code pour activer le son
-  document.getElementById('toggle-sound').addEventListener('click', function() {
-  const activeVideo = document.querySelector('.carousel-item.active .carousel-video');
+    //Code pour activer le son
+    let isMuted = true; // initial state
 
-  if (activeVideo.muted) {
-    activeVideo.muted = false;
-    this.innerText = "DÉSACTIVER LE SON";
-  } else {
-    activeVideo.muted = true;
-    this.innerText = "ACTIVER LE SON";
-  }
-  });
+    document.getElementById('toggle-sound').addEventListener('click', function() {
+      isMuted = !isMuted; // toggle the global sound state
+
+      videos.forEach(video => {
+        video.muted = isMuted;
+      });
+
+      this.innerText = isMuted ? "ACTIVER LE SON" : "DÉSACTIVER LE SON";
+    });
 
 
     function showVideo(index) {
@@ -102,9 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
       currentIndex = index;
 
       carouselItems[currentIndex].classList.add('active'); // Add active to the new item
+      videos[currentIndex].muted = isMuted; // Set the sound state for the new video based on global state
       videos[currentIndex].setAttribute('controls', 'true'); // Add controls to the new active video
       videos[currentIndex].play(); // Play the new active video
     }
+
 
     document.getElementById('next-video').addEventListener('click', function() {
       showVideo(currentIndex + 1);
@@ -148,5 +150,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 3000);
 });
-
 </script>
