@@ -196,6 +196,10 @@ a.active:focus {
   scrollbar-width: none;
   z-index: 9;
 }
+.centerTarget{
+  margin: -1rem;
+  padding: 0;
+}
 .center-video {
   height: 75vh;
   flex: 2 1 0%;
@@ -206,7 +210,7 @@ a.active:focus {
 }
 .center-video, .right-side {
     position: relative; /* Position relative pour superposer sur le carousel */
-    z-index: 1; /* Place ces éléments au-dessus du carousel */
+    z-index: -1; /* Place ces éléments au-dessus du carousel */
 }
 .left-side {
     position: relative; /* Définit une valeur de position autre que static */
@@ -256,6 +260,12 @@ table {
   margin-top: 9.9rem;
   max-width: 250px;
 }
+.haut-de-page {
+    position: absolute;
+    bottom: -9rem;
+    right: 6.5rem;
+    font-size: 0.9rem;
+}
 .layout-options {
   position: fixed;
   bottom: 1.5rem;
@@ -272,6 +282,7 @@ table {
   position: fixed;
   bottom: 3.5rem;
   right: 21px;
+  font-size: 0.9rem;
 }
 .center p b {
   margin-bottom: 0;
@@ -601,6 +612,9 @@ footer {
   }
   .center p:first-child {
     margin-top: 1rem;
+  }
+  .haut-de-page {
+    display: none;
   }
 }
 
