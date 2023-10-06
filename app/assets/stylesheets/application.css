@@ -295,6 +295,10 @@ table {
   right: 21px;
   font-size: 0.9rem;
 }
+.photo {
+  align-items: center;
+  display: block;
+}
 .center p b {
   margin-bottom: 0;
 }
