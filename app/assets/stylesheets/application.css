@@ -233,9 +233,32 @@ a.active:focus {
 .center h4 {
   margin-left: 5rem;
 }
+.center h5 {
+  margin-left: 5rem;
+  margin-bottom: 0; 
+}
 .center  p {
-  text-indent: 5rem;
+  /* text-indent: 5rem; */
   font-family: 'Bradford LL';
+}
+.no-indent {
+  text-indent: 0;
+}
+.distinctions {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 3rem;
+}
+.distinctions p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.listing-title {
+  margin-bottom: 0;
+}
+.listing {
+  margin-left: 2rem;
+  margin-top: 0;
 }
 .right-side {
   display: flex;
@@ -274,8 +297,8 @@ table {
 .haut-de-page {
     position: fixed;
     bottom: 4rem;
-    right: 1.5rem;
-    font-size: 0.9rem;
+    right: 3.5rem;
+    font-size: 0.8rem;
 }
 .layout-options {
   position: fixed;
@@ -292,15 +315,30 @@ table {
   margin: 0;
   position: fixed;
   bottom: 3.5rem;
-  right: 21px;
-  font-size: 0.9rem;
+  right: 3.5rem;
+  font-size: 0.8rem;
 }
 .photo {
-  align-items: center;
-  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: -15;
+}
+.legend {
+  font-size: 0.8rem; 
+  font-family: 'Helvetica', 'sans-serif'; 
+  text-align: right;
 }
 .center p b {
   margin-bottom: 0;
+}
+.center ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.center li {
+  text-indent: 2rem;
 }
 .mobile-inversion{
   display: contents;
