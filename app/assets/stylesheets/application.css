@@ -352,6 +352,17 @@ table {
 .programme h5:first-child {
   margin-top: -2px;
 }
+.pdf {
+  background-color: rgb(55,201,188);
+  color: rgb(0, 0, 0);
+  font-size: 0.7rem;
+  font-weight: 700;
+  top: 3rem;
+  position: relative;
+  padding: 6px;
+  left: 2.55rem;
+
+}
 .dates {
   margin-top: 9.6rem;
 }
