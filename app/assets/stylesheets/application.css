@@ -23,7 +23,7 @@
  }
  @font-face {
   font-family: 'Neue Haas Display Thin';
-  src: font-url('NeueHaasDisplayThin.ttf') format('truetype');
+  src: font-url('NeueHaasGrotDisp-15XThin.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
