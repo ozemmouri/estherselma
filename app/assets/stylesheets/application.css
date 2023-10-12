@@ -197,7 +197,7 @@ a.active:focus {
   padding: 0;
 }
 .center {
-  height: 62vh;
+  height: 61.25vh;
   top: 9.9rem;
   flex: 2 1 0%;
   max-width: 45vw;
@@ -604,6 +604,9 @@ table {
     height: auto;
     width: -webkit-fill-available;
   }
+  .img-class {
+    width: 80%;
+  }
   .image {
     max-width: 30vw;
     overflow: hidden;
@@ -637,6 +640,7 @@ table {
   }
   .right-side .sub-menu ul {
     padding: 0;
+    margin-bottom:15px;
   }
   .sub-menu {
     max-width: 80vw;
@@ -670,6 +674,16 @@ table {
   }
   .haut-de-page {
     display: none;
+  }
+  .pdf-mobile {
+    background-color: rgb(55,201,188);
+    color: rgb(0, 0, 0);
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top:2rem;
+    position:static;
+    padding: 6px;
+    left: 2.55rem;
   }
 }
 
