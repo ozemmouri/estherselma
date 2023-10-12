@@ -22,13 +22,12 @@
    font-style: normal;
  }
  @font-face {
-  font-family: 'NeueHaasGrotDisp-35Thin';
-  src: font-url('NeueHaasGrotDisp-35Thin') format('woff2'),
-    font-url('NeueHaasGrotDisp-35Thin.woff') format('woff'),
-    font-url('NeueHaasGrotDisp-35Thin.ttf') format('truetype');
+  font-family: 'Neue Haas Display Thin';
+  src: font-url('NeueHaasDisplayThin.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+
  body {
   background-color: rgba(0, 0, 0, 1);
   color: rgba(255, 255, 255, 1);
@@ -402,18 +401,20 @@ table {
   padding-top: 0.3rem;
   padding-right: 2rem;
   overflow: scroll;
-  font-family: 'NeueHaasGrotDisp-35Thin';
+  font-family: 'Neue Haas Display Thin', sans-serif;
 }
 .text h6 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 0.8rem;
+  font-family: 'Neue Haas Display Thin', sans-serif;
 }
 .text p {
   margin-top: 0;
   font-size: 0.8rem;
   padding-top: 0;
   text-indent: 0;
+  font-family: 'Neue Haas Display Thin', sans-serif;
 }
 #contact {
   margin-top: 0;
