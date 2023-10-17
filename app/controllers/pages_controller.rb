@@ -17,10 +17,19 @@ class PagesController < ApplicationController
   def edition2023
   end
 
+  def edition2023_echange
+  end
+
+  def edition2023_vivreensemble
+  end
+
   def paroles
   end
 
   def tissuculturel
+  end
+
+  def tissu_culturel_publications
   end
 
   def programme15
@@ -38,6 +47,8 @@ class PagesController < ApplicationController
   def infospratiques
   end
 
+  def infospratiques_transports
+  end
   def billeterie
   end
 
