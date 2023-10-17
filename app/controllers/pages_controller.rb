@@ -5,6 +5,15 @@ class PagesController < ApplicationController
   def festival
   end
 
+  def festival_equipe
+  end
+
+  def festival_essaouira
+  end
+
+  def festival_ronit
+  end
+
   def edition2023
   end
 

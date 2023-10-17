@@ -1,0 +1,24 @@
+<div class="mobile-inversion">
+  <div class="center">
+    <div id="festival" class="centerTarget"></div>
+    <div class="photo">
+      <%= image_tag("sunset.jpeg", alt:"Essaouira", class:"img-class") %>
+    </div>
+    <h4 id="essaouira">Pourquoi la ville d’Essaouira ?</h4>
+    <p>
+      Essaouira est le creuset de notre réflexion, philosophique et géopolitique, car la ville a connu d’abord une cohabitation des différentes cultures et religions, puis l’exode d’une partie de sa population- les juifs marocains- et maintenant veut être le modèle du dialogue et de l’ouverture à un nouveau cosmopolitisme.<br>
+      Essaouira est le lieu d’origine de la famille Elkabetz. Les parents de Ronit, grande actrice israélienne et Shlomi, figure du nouveau cinéma israélien, ont quitté Essaouira en 1963 et y reviendront pour les rencontres.<br>
+    </p>
+  </div>
+  <div class="right-side">
+    <div class="sub-menu">
+      <ul>
+        <li><%= link_to festival_path do %>Manifesto<% end %></li>
+        <li><%= link_to festival_essaouira_path do %>Essaouira<% end %></li>
+        <li><%= link_to festival_ronit_path do %>Ronit la femme engagée<% end %></a></li>
+        <li><%= link_to festival_equipe_path do %>L'équipe mobilisée<% end %></a></li>
+      </ul>
+    </div>
+    <p class="haut-de-page"><a href="#festival">HAUT DE PAGE</a></p>
+  </div>
+</div>
