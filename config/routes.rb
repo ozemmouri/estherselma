@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   get 'infos_pratiques', to: "pages#infospratiques"
   get 'infos_pratiques_transports', to: "pages#infospratiques_transports"
   get 'billeterie', to: "pages#billeterie"
+  get 'actualites', to: "pages#actualites"
   get 'contact', to: "pages#contact"
 end

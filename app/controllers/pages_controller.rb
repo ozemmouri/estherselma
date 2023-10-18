@@ -52,6 +52,9 @@ class PagesController < ApplicationController
   def billeterie
   end
 
+  def actualites
+  end
+
   def contact
   end
 end
