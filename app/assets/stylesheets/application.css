@@ -241,7 +241,7 @@ a.active:focus {
   margin-left: 5rem;
 }
 .center h5 {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 .center  p {
   /* text-indent: 5rem; */
@@ -332,8 +332,8 @@ table {
   z-index: -15;
 }
 .legend {
-  font-size: 0.8rem; 
-  font-family: 'Helvetica', 'sans-serif'; 
+  font-size: 0.8rem;
+  font-family: 'Helvetica', 'sans-serif';
   text-align: right;
 }
 .center p b {
@@ -853,5 +853,8 @@ input:checked+.slider:before {
   list-style: none;
   text-align: left;
   font-size: 0.9rem;
+}
+.img-height {
+  height: 22rem;
 }
 
