@@ -259,7 +259,7 @@ a.active:focus {
 }
 
 .distinctions p {
-  /* font-family: "Haas Grot Disp 65 Medium"; */
+  font-family: "Haas Grot Disp 65 Medium", sans-serif;
   margin-bottom: 0;
   margin-top: 0;
 }
