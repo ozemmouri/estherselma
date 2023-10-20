@@ -394,17 +394,17 @@ table {
   overflow: visible;
 }
 .image {
-  margin-right: -60px;
+  max-width: 20vw;
   flex: 1;
   overflow: hidden;
 }
 .text {
   color: rgb(0, 0, 0);
   flex: 1;
-  margin-left: 3rem;
+  margin-left: 0.5vw;
   margin-top: 0;
   padding-top: 0.3rem;
-  padding-right: 2rem;
+  padding-right: 0.08vw;
   overflow: scroll;
   font-family: 'Bradford LL', sans-serif;
 }
