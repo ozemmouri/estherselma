@@ -23,7 +23,7 @@
   <div id="video-carousel" class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <video id="video1" class="carousel-video" controls muted>
+        <video id="video1" class="carousel-video" controls="false" muted>
           <source src="<%= asset_path 'video1.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -31,19 +31,19 @@
       </div>
       <!-- Similar changes for other videos -->
       <div class="carousel-item">
-        <video id="video2" class="carousel-video" muted>
+        <video id="video2" class="carousel-video" muted controls="false">
           <source src="<%= asset_path 'video2.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
       <div class="carousel-item">
-        <video id="video3" class="carousel-video" muted>
+        <video id="video3" class="carousel-video" muted controls="false">
           <source src="<%= asset_path 'video3.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
       <div class="carousel-item">
-        <video id="video4" class="carousel-video" muted>
+        <video id="video4" class="carousel-video" muted controls="false">
           <source src="<%= asset_path 'video4.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
