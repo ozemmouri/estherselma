@@ -408,6 +408,8 @@ table {
   padding-right: 0.08vw;
   overflow: scroll;
   font-family: 'Bradford LL', sans-serif;
+  line-height: 0.5;
+
 }
 .text > p {
   font-family: 'Neue Haas Grot Disp', sans-serif;
