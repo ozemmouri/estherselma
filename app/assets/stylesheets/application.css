@@ -22,7 +22,7 @@
    font-style: normal;
  }
  @font-face {
-  font-family: 'Neue Haas Display Thin';
+  font-family: 'Neue Haas Grot Disp';
   src: font-url('NeueHaasGrotDisp-15XThin.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
@@ -249,7 +249,7 @@ a.active:focus {
   font-family: 'Bradford LL';
 }
 .center ul {
-  font-family: 'Bradford LL';
+  /*font-family: 'Bradford LL';*/
 }
 .no-indent {
   text-indent: 0;
@@ -409,20 +409,20 @@ table {
   font-family: 'Bradford LL', sans-serif;
 }
 .text > p {
-  font-family: 'Neue Haas Display Thin', sans-serif;
+  font-family: 'Neue Haas Grot Disp', sans-serif;
 }
 .text h6 {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 0.8rem;
-  font-family: 'Neue Haas Display Thin', sans-serif;
+  font-family: 'Neue Haas Grot Disp', sans-serif;
 }
 .text p {
   margin-top: 0;
   font-size: 0.8rem;
   padding-top: 0;
   text-indent: 0;
-  font-family: 'Neue Haas Display Thin', sans-serif;
+  font-family: 'Neue Haas Grot Disp', sans-serif;
 }
 #contact {
   margin-top: 0;
@@ -876,7 +876,7 @@ input:checked+.slider:before {
   font-weight: 600;
   margin-left:3rem;
 }
-.center > .distinctions p {
+/*.center > .distinctions p {
   font-family: "Haas Grot Disp 65 Medium" !important;
   margin-bottom: 0;
   margin-top: 0;
@@ -884,3 +884,7 @@ input:checked+.slider:before {
 .center > .distinctions ul {
   font-family: "Haas Grot Disp 65 Medium" !important;
 }
+.center .distinctions {
+  font-family: "Haas Grot Disp 65 Medium", sans-serif !important;
+}
+*/
