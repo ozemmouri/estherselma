@@ -257,13 +257,9 @@ a.active:focus {
 .h4margin {
   margin-left: 5rem;
 }
-.distinctions {
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-left:3rem;
-}
+
 .distinctions p {
-  font-family: "Haas Grot Disp 65 Medium";
+  /* font-family: "Haas Grot Disp 65 Medium"; */
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -405,11 +401,14 @@ table {
 .text {
   color: rgb(0, 0, 0);
   flex: 1;
-  margin-left: 5rem;
+  margin-left: 3rem;
   margin-top: 0;
   padding-top: 0.3rem;
   padding-right: 2rem;
   overflow: scroll;
+  font-family: 'Bradford LL', sans-serif;
+}
+.text > p {
   font-family: 'Neue Haas Display Thin', sans-serif;
 }
 .text h6 {
@@ -871,4 +870,17 @@ input:checked+.slider:before {
 .img-height {
   height: 22rem;
 }
-
+.distinctions {
+  font-family: "Haas Grot Disp 65 Medium", sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left:3rem;
+}
+.center > .distinctions p {
+  font-family: "Haas Grot Disp 65 Medium" !important;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.center > .distinctions ul {
+  font-family: "Haas Grot Disp 65 Medium" !important;
+}
