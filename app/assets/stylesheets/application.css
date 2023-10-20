@@ -292,7 +292,7 @@ a.active:focus {
 }
 .news h5 {
   margin-bottom: 0;
-  padding-top: 7px;
+  margin-top: 20px;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
