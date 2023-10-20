@@ -247,6 +247,7 @@ a.active:focus {
 .center  p {
   /* text-indent: 5rem; */
   font-family: 'Bradford LL';
+  line-height: 1.5
 }
 .center ul {
   /*font-family: 'Bradford LL';*/
