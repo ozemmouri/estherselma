@@ -135,7 +135,7 @@ a.active:focus {
   /* background-position: center center; */
   /* background-attachment: fixed; */
   z-index: 1;
-  width: 45vh;
+  width: 40vh;
   height: 30vh;
   /* Adjust this to control the sizing of the background image */
 }
@@ -249,7 +249,7 @@ a.active:focus {
   font-family: 'Bradford LL';
 }
 .center ul {
-  font-family: 'Bradford LL'; 
+  font-family: 'Bradford LL';
 }
 .no-indent {
   text-indent: 0;
