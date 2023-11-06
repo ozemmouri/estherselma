@@ -132,13 +132,14 @@ a.active:focus {
   background-image: url('white-esther-top.svg');
   background-repeat: no-repeat;
   background-size: auto;
-  /* background-position: center center; */
+  background-position: top center;
   /* background-attachment: fixed; */
   z-index: 1;
   width: 40vh;
   height: 30vh;
   /* Adjust this to control the sizing of the background image */
 }
+
 .background-bottom {
   position: absolute;
   bottom: 0;
@@ -196,6 +197,7 @@ a.active:focus {
 }
 .menu {
   margin-top: 2rem;
+  font-size: 1.1rem;
 }
 .menu li {
   list-style: none;
@@ -238,6 +240,7 @@ a.active:focus {
   margin-top: 0;
 }
 .center h4 {
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 .center h5 {
@@ -293,7 +296,7 @@ a.active:focus {
 }
 .news h5 {
   margin-bottom: 0;
-  margin-top: 20px;
+  margin-top: 24px;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
@@ -303,9 +306,21 @@ a.active:focus {
 table {
   margin-left: -3.3rem;
 }
+.pdf-home {
+  background-color: rgb(55,201,188);
+  color: rgb(0, 0, 0);
+  font-size: 0.7rem;
+  font-weight: 700;
+  top: 1.5rem;
+  position: relative;
+  padding: 6px;
+  left: 0;
+  width: 240px;
+}
 .sub-menu{
   margin-top: 9.9rem;
   max-width: 250px;
+  font-size: 1.1rem;
 }
 .haut-de-page {
     position: fixed;
@@ -374,7 +389,6 @@ table {
   position: relative;
   padding: 6px;
   left: 2.55rem;
-
 }
 .dates {
   margin-top: 9.6rem;

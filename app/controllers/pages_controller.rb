@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   def festival_essaouira
   end
 
+  def festival_logo
+  end
+
   def festival_ronit
   end
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'festival', to: "pages#festival"
   get 'festival_equipe', to: "pages#festival_equipe"
   get 'festival_essaouira', to: "pages#festival_essaouira"
+  get 'festival_logo', to: "pages#festival_logo"
   get 'festival_ronit', to: "pages#festival_ronit"
   get 'edition2023', to: "pages#edition2023"
   get 'edition2023_echange', to: "pages#edition2023_echange"
