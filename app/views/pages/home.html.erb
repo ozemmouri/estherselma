@@ -69,123 +69,101 @@
   </div>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // ... your other event listeners
+document.addEventListener('DOMContentLoaded', function() {
+  // Elements
+  const fullscreenButton = document.getElementById('fullscreen-btn');
+  const videoContainer = document.getElementById('video-carousel');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const videos = document.querySelectorAll('.carousel-video');
+  const submenuLinks = document.querySelectorAll('.sub-menu a');
+  const svgElement = document.getElementById('fullscreen-svg');
 
-    const fullscreenButton = document.getElementById('fullscreen-btn');
+  // State variables
+  let currentIndex = 0;
+  let isMuted = true;
 
-    fullscreenButton.addEventListener('click', function() {
-      // Get the current active video instead of the container
-      const activeVideo = document.querySelector('.carousel-item.active video');
+  // Fullscreen toggle
+  fullscreenButton.addEventListener('click', function() {
+    // Get the current active video instead of the container
+    const activeVideo = document.querySelector('.carousel-item.active video');
 
-      if (activeVideo) {
-        if (!document.fullscreenElement) {
-          if (activeVideo.requestFullscreen) {
-            activeVideo.requestFullscreen();
-          } else if (activeVideo.mozRequestFullScreen) { /* Firefox */
-            activeVideo.mozRequestFullScreen();
-          } else if (activeVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-            activeVideo.webkitRequestFullscreen();
-          } else if (activeVideo.msRequestFullscreen) { /* IE/Edge */
-            activeVideo.msRequestFullscreen();
-          }
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.mozCancelFullScreen) { /* Firefox */
-            document.mozCancelFullScreen();
-          } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-            document.webkitExitFullscreen();
-          } else if (document.msExitFullscreen) { /* IE/Edge */
-            document.msExitFullscreen();
-          }
+    if (activeVideo) {
+      if (!document.fullscreenElement) {
+        if (activeVideo.requestFullscreen) {
+          activeVideo.requestFullscreen();
+        } else if (activeVideo.mozRequestFullScreen) { /* Firefox */
+          activeVideo.mozRequestFullScreen();
+        } else if (activeVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+          activeVideo.webkitRequestFullscreen();
+        } else if (activeVideo.msRequestFullscreen) { /* IE/Edge */
+          activeVideo.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { /* Firefox */
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE/Edge */
+          document.msExitFullscreen();
         }
       }
-    });
+    }
   });
-  document.addEventListener('DOMContentLoaded', function() {
-    const carouselItems = document.querySelectorAll('.carousel-item');git
-    const videos = document.querySelectorAll('.carousel-video');
-    let currentIndex = 0;
 
-    //Code pour activer le son
-    let isMuted = true; // initial state
-
-    document.getElementById('toggle-sound').addEventListener('click', function() {
-      isMuted = !isMuted; // toggle the global sound state
-
-      videos.forEach(video => {
-        video.muted = isMuted;
-      });
-
-      this.innerText = isMuted ? "ACTIVER LE SON" : "DÉSACTIVER LE SON";
+  // Sound toggle
+  document.getElementById('toggle-sound').addEventListener('click', function() {
+    isMuted = !isMuted;
+    videos.forEach(video => {
+      video.muted = isMuted;
     });
+    this.innerText = isMuted ? "ACTIVER LE SON" : "DÉSACTIVER LE SON";
+  });
 
-
-    function showVideo(index) {
-      if (index < 0) {
-          index = carouselItems.length - 1;
-      } else if (index >= carouselItems.length) {
-          index = 0;
-      }
-
-      carouselItems[currentIndex].classList.remove('active'); // Remove active from the current item
-      videos[currentIndex].pause(); // Pause the current video
-      videos[currentIndex].currentTime = 0; // Reset the current video time
-
-      currentIndex = index;
-
-      carouselItems[currentIndex].classList.add('active'); // Add active to the new item
-      videos[currentIndex].muted = isMuted; // Set the sound state for the new video based on global state
-      videos[currentIndex].setAttribute('controls', 'true'); // Add controls to the new active video
-
-      // Check if the video is video1 and if so, start at the 15th second
-      // if (videos[currentIndex].id === "video1") {
-      //   videos[currentIndex].currentTime = 15;
-      // }
-
-      videos[currentIndex].play(); // Play the new active video
-
-
+  // Show video function
+  function showVideo(index) {
+    if (index < 0) {
+      index = carouselItems.length - 1;
+    } else if (index >= carouselItems.length) {
+      index = 0;
     }
 
+    carouselItems[currentIndex].classList.remove('active');
+    videos[currentIndex].pause();
+    videos[currentIndex].currentTime = 0;
 
-    document.getElementById('next-video').addEventListener('click', function() {
-      showVideo(currentIndex + 1);
-    });
+    currentIndex = index;
 
-    // Show the first video initially
-    showVideo(currentIndex);
+    carouselItems[currentIndex].classList.add('active');
+    videos[currentIndex].muted = isMuted;
+    videos[currentIndex].setAttribute('controls', 'true');
+    videos[currentIndex].play();
+  }
+
+  // Next video event
+  document.getElementById('next-video').addEventListener('click', function() {
+    showVideo(currentIndex + 1);
   });
-  document.addEventListener("DOMContentLoaded", function () {
-  // Get all links in the sub-menu
-  const submenuLinks = document.querySelectorAll(".sub-menu a");
 
+  // Initialize the first video
+  showVideo(currentIndex);
+
+  // Sub-menu link activation
   submenuLinks.forEach((link) => {
-    // Add click event listener to each link
-    link.addEventListener("click", function (event) {
-      // Remove 'active' class from all sub-menu links
-      submenuLinks.forEach((lnk) => lnk.classList.remove("active"));
-
-      // Add 'active' class to the clicked link
-      link.classList.add("active");
+    link.addEventListener('click', function() {
+      submenuLinks.forEach(lnk => lnk.classList.remove('active'));
+      link.classList.add('active');
     });
-
-    // Check if the link's href matches the current URL
     if (link.href === window.location.href) {
-      // Add 'active' class to the matching link
-      link.classList.add("active");
+      link.classList.add('active');
     }
   });
-});
-  document.addEventListener("DOMContentLoaded", function () {
-  // After 3 seconds, start fading out the fullscreen SVG
+
+  // Fade out fullscreen SVG after 3 seconds
   setTimeout(function() {
-    const svgElement = document.getElementById('fullscreen-svg');
     if (svgElement) {
       svgElement.style.opacity = '0';
-
-      // After transition is complete (1s), remove the element from the DOM
       setTimeout(function() {
         svgElement.parentNode.removeChild(svgElement);
       }, 1000);
