@@ -202,6 +202,12 @@ a.active:focus {
 .menu li {
   list-style: none;
 }
+.programme_link {
+  color: rgb(199, 14, 14);
+}
+.dark-mode .programme_link {
+  color: rgb(0, 0, 0);
+}
 .menu ul {
   padding: 0;
 }
@@ -296,7 +302,7 @@ a.active:focus {
 }
 .news h5 {
   margin-bottom: 0;
-  margin-top: 24px;
+  margin-top: 25.2px;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
@@ -397,7 +403,7 @@ table {
 .event1 {
   background-color: rgb(55,201,188);
   display: flex;
-  max-height: 153px;
+  height: 192px;
 }
 .event .img {
   max-width: 300px;
@@ -406,7 +412,7 @@ table {
   height: 100%;
   object-fit: cover; /* permet à l'image de couvrir entièrement la div sans déformation */
   object-position: center; /* centre l'image dans le contenant */
-  overflow: visible;
+  overflow: hidden;
 }
 .image {
   max-width: 20vw;
@@ -718,10 +724,11 @@ table {
     color: rgb(0, 0, 0);
     font-size: 0.7rem;
     font-weight: 700;
-    margin-top:2rem;
+    margin-top:0rem;
     position:static;
     padding: 6px;
     left: 2.55rem;
+    width: 75vw;
   }
 }
 
