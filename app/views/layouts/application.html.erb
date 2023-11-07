@@ -39,7 +39,8 @@
         </div>
       </div>
       <div class="mobile-white-margin"></div>
-      <div class="layout-options mobileShow">
+      <% unless controller_name == 'pages' && action_name == 'home' %>
+        <div class="layout-options mobileShow">
           <div class="mode-toggle">
             <div class="theme-switch-wrapper mobile">
               <label class="theme-switch" for="checkbox">
@@ -49,6 +50,7 @@
             </div>
           </div>
         </div>
+      <% end %>
       <div class="background-top mobileHide"></div>
       <div class="background-bottom mobileHide"></div>
       <div class="footer-height mobileHide"></div>
@@ -145,7 +147,7 @@
          });
       });
     });
-    
+
     document.addEventListener("DOMContentLoaded", function () {
     // Get all links in the menu
       const menuLinks = document.querySelectorAll(".menu a");
