@@ -912,3 +912,6 @@ input:checked+.slider:before {
   font-family: "Haas Grot Disp 65 Medium", sans-serif !important;
 }
 */
+.df {
+  display: flex;
+}
