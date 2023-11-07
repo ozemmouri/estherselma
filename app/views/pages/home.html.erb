@@ -53,8 +53,9 @@
 </div>
 <div class="right-side mobileHide">
   <div class="news">
-    <p id="next-video" class="link" style=" position: fixed; bottom: 5.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">EXTRAIT SUIVANT</p>
-    <p id="toggle-sound" class="link" style=" position: fixed; bottom: 4.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">ACTIVER LE SON
+    <p id="fullscreen-btn" class="link" style="position: fixed; bottom:6.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">PLEIN ECRAN</p>
+    <p id="next-video" class="link" style="position: fixed; bottom: 5.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">EXTRAIT SUIVANT</p>
+    <p id="toggle-sound" class="link" style="position: fixed; bottom: 4.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">ACTIVER LE SON
     </p>
     <h5><%= link_to "Dernières actualités", actualites_path %></h5>
     <table>
@@ -68,6 +69,34 @@
   </div>
 </div>
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const fullscreenButton = document.getElementById('fullscreen-btn');
+    const videoContainer = document.getElementById('video-carousel'); // This should be the container of your video
+
+    fullscreenButton.addEventListener('click', function() {
+      if (!document.fullscreenElement) {
+        if (videoContainer.requestFullscreen) {
+          videoContainer.requestFullscreen();
+        } else if (videoContainer.mozRequestFullScreen) { /* Firefox */
+          videoContainer.mozRequestFullScreen();
+        } else if (videoContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+          videoContainer.webkitRequestFullscreen();
+        } else if (videoContainer.msRequestFullscreen) { /* IE/Edge */
+          videoContainer.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { /* Firefox */
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE/Edge */
+          document.msExitFullscreen();
+        }
+      }
+    });
+  });
   document.addEventListener('DOMContentLoaded', function() {
     const carouselItems = document.querySelectorAll('.carousel-item');
     const videos = document.querySelectorAll('.carousel-video');
