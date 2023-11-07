@@ -212,7 +212,7 @@ a.active:focus {
   padding: 0;
 }
 .center {
-  height: 60vh;
+  height: 59vh;
   top: 9.9rem;
   flex: 2 1 0%;
   max-width: 45vw;
