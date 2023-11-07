@@ -406,7 +406,7 @@ table {
   height: 100%;
   object-fit: cover; /* permet à l'image de couvrir entièrement la div sans déformation */
   object-position: center; /* centre l'image dans le contenant */
-  overflow: visible;
+  overflow: hidden;
 }
 .image {
   max-width: 20vw;
@@ -905,3 +905,6 @@ input:checked+.slider:before {
   font-family: "Haas Grot Disp 65 Medium", sans-serif !important;
 }
 */
+.df {
+  display: flex;
+}
