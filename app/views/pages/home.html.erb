@@ -70,29 +70,35 @@
 </div>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // ... your other event listeners
+
     const fullscreenButton = document.getElementById('fullscreen-btn');
-    const videoContainer = document.getElementById('video-carousel'); // This should be the container of your video
 
     fullscreenButton.addEventListener('click', function() {
-      if (!document.fullscreenElement) {
-        if (videoContainer.requestFullscreen) {
-          videoContainer.requestFullscreen();
-        } else if (videoContainer.mozRequestFullScreen) { /* Firefox */
-          videoContainer.mozRequestFullScreen();
-        } else if (videoContainer.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
-          videoContainer.webkitRequestFullscreen();
-        } else if (videoContainer.msRequestFullscreen) { /* IE/Edge */
-          videoContainer.msRequestFullscreen();
-        }
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) { /* Firefox */
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-          document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) { /* IE/Edge */
-          document.msExitFullscreen();
+      // Get the current active video instead of the container
+      const activeVideo = document.querySelector('.carousel-item.active video');
+
+      if (activeVideo) {
+        if (!document.fullscreenElement) {
+          if (activeVideo.requestFullscreen) {
+            activeVideo.requestFullscreen();
+          } else if (activeVideo.mozRequestFullScreen) { /* Firefox */
+            activeVideo.mozRequestFullScreen();
+          } else if (activeVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            activeVideo.webkitRequestFullscreen();
+          } else if (activeVideo.msRequestFullscreen) { /* IE/Edge */
+            activeVideo.msRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) { /* Firefox */
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) { /* IE/Edge */
+            document.msExitFullscreen();
+          }
         }
       }
     });
