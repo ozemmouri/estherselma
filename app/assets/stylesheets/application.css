@@ -374,6 +374,13 @@ table {
 .programme p {
   margin-top: O;
 }
+.programme_link {
+  color: rgb(199, 14, 14);
+}
+.dark-mode  .programme_link {
+  color: #000;
+}
+
 .programme h5 {
   text-align: right;
 }

@@ -24,7 +24,7 @@
               <li><%= link_to "2023, édition pionnière", edition2023_path %></li>
               <li><%= link_to "Paroles", paroles_path %></li>
               <li><%= link_to "Tissu culturel", tissu_culturel_path %></li>
-              <li><%= link_to "Programme", programme15_path %></li>
+              <li class="programme_link"><%= link_to "Programme", programme15_path, class:"programme_link" %></li>
               <li><%= link_to "Infos pratiques", infos_pratiques_path %></li>
               <li><%= link_to "Billetterie", billeterie_path %></li>
               <li><%= link_to "Contact", contact_path %></li>
@@ -97,11 +97,21 @@
           if (background_bottom) {
               background_bottom.classList.toggle('dark-mode');
               background_bottom.classList.toggle('light-mode');
+
           }
+
 
           // Update the state of the checkbox to reflect the mode.
           themeSwitch.checked = body.classList.contains('dark-mode');
+
+        const programme_link = document.querySelector('.programme_link');
+        if (body.classList.contains('dark-mode')) {
+          programmeLink.style.color = 'black';
+        }
       }
+
+
+
 
       toggleModeButton.addEventListener('click', function() {
           toggleMode();
