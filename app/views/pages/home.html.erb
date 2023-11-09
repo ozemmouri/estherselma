@@ -4,7 +4,13 @@
     <p>Rencontres cinématographiques<br>
     Essaouira</p>
   </div>
-  <%= image_tag 'E&S-logo-white.svg', style:"height:21rem;"%>
+  <%= image_tag 'E&S-logo-white.svg', style:"height:15rem;"%><br><br>
+  <div class="video-mobile mobileShow">
+    <video id="video1"  controls="false" muted autoplay playsinline poster="<%= asset_path('poster-ronit.png') %>">
+      <source src="<%= asset_path 'video1.mp4' %>" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
   <div class="menu-mobile">
     <ul>
       <li><%= link_to "Un festival engagé", festival_path %></li>
@@ -23,7 +29,7 @@
   <div id="video-carousel" class="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <video id="video1" class="carousel-video" controls="false" muted autoplay playsinline>
+        <video id="video1" class="carousel-video" controls="false" muted autoplay playsinline poster="<%= asset_path('poster-ronit.png') %>">
           <source src="<%= asset_path 'video1.mp4' %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
