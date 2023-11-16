@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   get 'billeterie', to: "pages#billeterie"
   get 'actualites', to: "pages#actualites"
   get 'contact', to: "pages#contact"
+
+  get '/pdf/:filename', to: 'pdf#show', as: 'pdf'
 end
