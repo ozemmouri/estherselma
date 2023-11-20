@@ -859,7 +859,7 @@ input:checked+.slider:before {
   left: 0;
   z-index: 10000;
   opacity: 1;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 #fullscreen-svg {
   background: url('E&S-landing-page.svg') center/cover no-repeat;
