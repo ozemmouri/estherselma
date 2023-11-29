@@ -1,0 +1,32 @@
+<div class="mobile-inversion">
+  <div class="center">
+    <div class="centerTarget" id="infospratiques"></div>
+
+    <h4 id="transports">Les transports</h4>
+    <h5>Par les airs</h5>
+    <p>
+      Depuis la France, plusieurs les vols sont opérés par les compagnies Air France, Transavia, Ryanair et Easyjet<br><br>
+
+      Depuis Israël, les vols sont assurés par la compagnie Arkia (au départ de Tel Aviv).
+    </p>
+    <h5>Par la route</h5>
+    <p>
+      Il est possible de rejoindre Essaouira par la route au départ de Marrakech, que ce soit en voiture ou en bus. Temps de trajet estimé : 2h30.
+    </p>
+    <h5>À l’intérieur du Festival </h5>
+    <p>Tous les lieux des Rencontres sont situés à proximité les uns des autres et sont accessibles à pied.</p>
+    <h5>En dehors du Festival</h5>
+    <p>Pour se déplacer à Essaouira, en dehors de la médina, rien de plus simple que de prendre un des nombreux petits taxis bleus.</p>
+    <%= image_tag "port.jpeg", style: "height: 30rem;" %>
+  </div>
+  <br><br><br>
+  <div class="right-side">
+    <div class="sub-menu">
+      <ul>
+        <li><%= link_to infos_pratiques_path do %>Les lieux du festival<% end %></li>
+        <li><%= link_to infos_pratiques_transports_path do %>Les transports<% end %></li>
+      </ul>
+    </div>
+    <p class="haut-de-page"><a href="#infospratiques">HAUT DE PAGE</a></p>
+  </div>
+</div>

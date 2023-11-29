@@ -5,12 +5,207 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", media: 'all' %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag asset_path('E&S-favicon.png') %>
   </head>
-
   <body>
+      <div class="container">
+        <div class="left-side">
+          <div class="title">
+            <%= link_to root_path do %><h1 >ESTHER & SELMA</h1><% end %>
+            <p>Rencontres cinématographiques<br>
+              Essaouira</p>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><%= link_to "Un festival engagé", festival_path %></li>
+              <li><%= link_to "2023, édition pionnière", edition2023_path %></li>
+              <li><%= link_to "Paroles", paroles_path %></li>
+              <li><%= link_to "Tissu culturel", tissu_culturel_path %></li>
+              <li class="programme_link"><%= link_to "Programme", programme15_path, class: "programme_link" %></li>
+              <li><%= link_to "Infos pratiques", infos_pratiques_path %></li>
+              <li><%= link_to "Billetterie", billeterie_path %></li>
+              <li><%= link_to "Contact", contact_path %></li>
+            </ul>
+          </div>
+        </div>
     <%= yield %>
+        <div class="layout-options mobileHide">
+          <div class="mode-toggle">
+            <p id="toggle-mode-button" class="link">INVERSER LES COULEURS</p>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-white-margin"></div>
+      <% unless controller_name == 'pages' && action_name == 'home' %>
+        <div class="layout-options mobileShow">
+          <div class="mode-toggle">
+            <div class="theme-switch-wrapper mobile">
+              <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="background-top mobileHide"></div>
+      <div class="background-bottom mobileHide"></div>
+      <div class="footer-height mobileHide"></div>
+      <div class="footer mobileHide">
+        <div class="column1">
+          <ul>
+            <li>ESTHER & SELMA</li>
+            <li>Rencontres cinématographiques</li>
+            <li>Essaouira, Maroc</li>
+            <li>édition 2023</li>
+          </ul>
+        </div>
+        <div class="column2">
+          <ul>
+            <li>Tous droits réservés 2023</li>
+          </ul>
+        </div>
+        <div class="column3">
+          <%# <ul>
+            <li><a href="mailto:estheretselma@gmail.com">estheretselma@gmail.com</a></li>
+            <br>
+            <li>Instagram</li>
+            <li>Facebook</li>
+          </ul> %>
+        </div>
+      </div>
+      </body>
+    <script>
+    // JavaScript to toggle dark/light mode
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleModeButton = document.getElementById('toggle-mode-button');
+      const themeSwitch = document.getElementById('checkbox');
+      const body = document.body;
+
+      function toggleMode() {
+          body.classList.toggle('dark-mode');
+          body.classList.toggle('light-mode');
+
+          // Toggle the background image class if needed
+          const background_top = document.querySelector('.background-top');
+          if (background_top) {
+              background_top.classList.toggle('dark-mode');
+              background_top.classList.toggle('light-mode');
+          }
+          const background_bottom = document.querySelector('.background-bottom');
+          if (background_bottom) {
+              background_bottom.classList.toggle('dark-mode');
+              background_bottom.classList.toggle('light-mode');
+          }
+
+          // Update the state of the checkbox to reflect the mode.
+          themeSwitch.checked = body.classList.contains('dark-mode');
+      }
+
+      toggleModeButton.addEventListener('click', function() {
+          toggleMode();
+      });
+
+      themeSwitch.addEventListener('change', function() {
+          toggleMode();
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const linkElements = document.querySelectorAll("a");
+    linkElements.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            const href = link.getAttribute("href");
+
+            // Check if the link has target="_blank"
+            if (link.getAttribute("target") === "_blank") {
+                return; // Let it open in a new tab as usual
+            }
+
+            if (href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+                return;
+            }
+            event.preventDefault();
+            const colorClasses = ["full-screen-yellow", "full-screen-red", "full-screen-blue"];
+            const randomColorClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+            const colorDiv = document.createElement("div");
+            colorDiv.className = `${randomColorClass}`;
+            colorDiv.style.opacity = '1'; // set initial opacity to 1
+            document.body.appendChild(colorDiv);
+            // start the fading out transition
+            setTimeout(function () {
+                colorDiv.classList.add('fading');
+            }, 100);
+            // Remove the color div after the transition is complete and redirect
+            setTimeout(function () {
+                document.body.removeChild(colorDiv);
+                window.location.href = href;
+            }, 1500); // should be greater than transition duration
+         });
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    // Get all links in the menu
+      const menuLinks = document.querySelectorAll(".menu a");
+
+      menuLinks.forEach((link) => {
+        // Add click event listener to each link
+        link.addEventListener("click", function (event) {
+          // Remove 'active' class from all menu links
+          menuLinks.forEach((lnk) => lnk.classList.remove("active"));
+
+          // Add 'active' class to the clicked link
+          link.classList.add("active");
+        });
+
+        // Check if the link's href matches the current URL
+        if (link.href === window.location.href) {
+          // Add 'active' class to the matching link
+          link.classList.add("active");
+        }
+      });
+      // ... (other event listeners)
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all links in the sub-menu
+      const submenuLinks = document.querySelectorAll(".sub-menu a");
+
+      submenuLinks.forEach((link) => {
+        // Add click event listener to each link
+        link.addEventListener("click", function (event) {
+          // Remove 'active' class from all sub-menu links
+          submenuLinks.forEach((lnk) => lnk.classList.remove("active"));
+
+          // Add 'active' class to the clicked link
+          link.classList.add("active");
+        });
+
+        // Check if the link's href matches the current URL
+        if (link.href === window.location.href) {
+          // Add 'active' class to the matching link
+          link.classList.add("active");
+        }
+      });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      const footer = document.querySelector('.footer');
+      const center = document.querySelector('.center'); // Add this line
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) { // Adjust the condition as per your requirement
+          footer.style.display = 'flex';
+          center.style.zIndex = '-1'; // Update the zIndex when the footer is visible.
+        } else {
+          footer.style.display = 'none';
+          center.style.zIndex = '9'; // Reset the zIndex when the footer is not visible.
+        }
+      });
+
+    });
+
+  </script>
   </body>
 </html>

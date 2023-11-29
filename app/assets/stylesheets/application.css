@@ -13,35 +13,905 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+   font-family: 'Bradford LL';
+   src: font-url('BradfordLL-Regular.woff2') format('woff2'),
+     font-url('BradfordLL-Regular.woff') format('woff'),
+     font-url('BradfordLL-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+ }
+ @font-face {
+  font-family: 'Neue Haas Grot Disp';
+  src: font-url('NeueHaasGrotDisp-15XThin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
  body {
   background-color: rgba(0, 0, 0, 1);
   color: rgba(255, 255, 255, 1);
+  overflow-x:hidden;
+  /* overflow-y: hidden; */
  }
+ body {
+   margin: 0;
+   padding: 0;
+   background-color: black;
+   /* Set the background color to black */
+
+   /* Hide vertical scrollbar initially */
+ }
+a {
+  color: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+body.dark-mode {
+   background-color: rgba(0, 0, 0, 1);
+   color: rgba(255, 255, 255, 1);
+}
+body.light-mode {
+  background-color: rgb(255, 204, 43);
+  color: white;
+}
+ /* Show the footer when scrolling down */
+ body.active-footer .footer {
+  bottom: 0;
+}
+body,
+p,
+h1 {
+ font-family: "Haas Grot Disp 65 Medium", sans-serif;
+}
+a:visited {
+  color: inherit;
+}
+a:hover {
+  color: rgb(199,14,14);
+}
+a:active {
+  color: rgb(255,204,43);
+}
+a:focus {
+  color:rgb(255, 204, 43);
+}
+a.light-mode {
+  color: black
+}
+a.dark-mode {
+  color: rgba(255, 255, 255, 1);
+}
+a.active,
+a.active:visited,
+a.active:hover,
+a.active:active,
+a.active:focus {
+  color: rgb(255, 204, 43);
+  /* Yellow or any other color you prefer */
+}
+.link:hover {
+  color: rgb(199, 14, 14);
+}
+.blue-link {
+  color: rgb(55,201,188)
+}
+.sub-menu a:active,
+.sub-menu a.active,
+.sub-menu a:focus {
+  color: rgb(55, 201, 188);
+}
+/* .background {
+  height: 101%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  background-image: url('E&S-frame-white.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: 1;
+} */
+.footer-height {
+  height: 101%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  z-index: 1;
+}
+.background-top {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url('white-esther-top.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top center;
+  /* background-attachment: fixed; */
+  z-index: 1;
+  width: 40vh;
+  height: 30vh;
+  /* Adjust this to control the sizing of the background image */
+}
+
+.background-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url('white-selma-bottom.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: bottom;
+  /* background-attachment: fixed; */
+  z-index: 1;
+  max-width: 100%;
+  width: 100vw;
+  height: 24vw;
+}
+.background-top.dark-mode {
+  background-image: url('black-esther-top.svg');
+}
+.background-bottom.dark-mode {
+  background-image: url('black-selma-bottom.svg');
+}
+.background-top.light-mode {
+  background-image: url('black-esther-top.svg');
+  /* Replace with your light mode image */
+}
+.background-bottom.light-mode {
+  background-image: url('black-selma-bottom.svg');
+  /* Replace with your light mode image */
+}
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  margin: 5rem;
+  width: 100%;
+  z-index: 6;
+}
+.container > h1 {
+  padding-bottom: -15px;
 }
 .left-side {
   display: flex;
   flex-direction: column;
   flex: 1;
+  max-width: 300px;
+  z-index: 5;
+}
+.title h1 {
+  width: 130%;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0px;
+}
+.title p {
+  margin-top:0px;
+}
+.menu {
+  margin-top: 2rem;
+  font-size: 1.1rem;
 }
 .menu li {
   list-style: none;
 }
-.video {
-  align-items: center;
-  display: flex;
-  flex: 1;
+.programme_link {
+  color: rgb(199, 14, 14);
+}
+.dark-mode .programme_link {
+  color: rgb(0, 0, 0);
+}
+.menu ul {
+  padding: 0;
+}
+.center {
+  height: 59vh;
+  top: 9.9rem;
+  flex: 2 1 0%;
+  max-width: 45vw;
+  margin-left: 16px;
+  overflow: scroll;
+  position: relative;
+  scrollbar-width: none;
+  z-index: 9;
+}
+.centerTarget{
+  margin: -1rem;
+  padding: 0;
+}
+.center-video {
+  height: 75vh;
+  flex: 2 1 0%;
+  max-width: 50vw;
+  margin-left: -50px;
+  /*overflow: visible;*/
+  scrollbar-width: none;
+}
+.center-video, .right-side {
+    position: relative; /* Position relative pour superposer sur le carousel */
+    z-index: -1; /* Place ces éléments au-dessus du carousel */
+}
+.left-side {
+    position: relative; /* Définit une valeur de position autre que static */
+    z-index: 2; /* Met ces éléments au-dessus du carousel vidéo */
+}
+.center  h4:first-child {
+  margin-top: 0;
+}
+.center h4 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+.center h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.center  p {
+  /* text-indent: 5rem; */
+  font-family: 'Bradford LL';
+  line-height: 1.5
+}
+.center ul {
+  /*font-family: 'Bradford LL';*/
+}
+.no-indent {
+  text-indent: 0;
+}
+.h4margin {
+  margin-left: 5rem;
+}
+
+.distinctions p {
+  font-family: "Haas Grot Disp 65 Medium", sans-serif;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.listing-title {
+  margin-bottom: 0;
+}
+.listing {
+  margin-left: 2rem;
+  margin-top: 0;
 }
 .right-side {
   display: flex;
   flex-direction: column;
-  flex: 1; 
+  flex: 1;
+  margin-left: 3rem;
+  z-index: 5;
+}
+.right-side ul{
+  margin: 0;
 }
 .right-side li {
   list-style: none;
 }
+.news {
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 8.3rem;
+  width: 250px;
+  z-index: 4;
+}
+.news h5 {
+  margin-bottom: 0;
+  margin-top: 25.2px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+.news-date {
+  font-size: 0.8rem;
+}
+table {
+  margin-left: -3.3rem;
+}
+.pdf-home {
+  background-color: rgb(55,201,188);
+  color: rgb(0, 0, 0);
+  font-size: 0.7rem;
+  font-weight: 700;
+  top: 1.5rem;
+  position: relative;
+  padding: 6px;
+  left: 0;
+  width: 240px;
+}
+.sub-menu{
+  margin-top: 9.9rem;
+  max-width: 250px;
+  font-size: 1.1rem;
+}
+.haut-de-page {
+    position: fixed;
+    bottom: 4.7rem;
+    right: 3.5rem;
+    font-size: 0.8rem;
+}
+.layout-options {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1rem;
+  z-index: 9;
+}
+.layout-options ul {
+  text-align: right;
+  list-style: none;
+}
+#toggle-mode-button {
+  cursor:pointer;
+  margin: 0;
+  position: fixed;
+  bottom: 4.5rem;
+  right: 3.5rem;
+  font-size: 0.8rem;
+}
+.photo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: -15;
+}
+.legend {
+  font-size: 0.8rem;
+  font-family: 'Helvetica', 'sans-serif';
+  text-align: right;
+}
+.center p b {
+  margin-bottom: 0;
+}
+.center ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.center li {
+  text-indent: 2rem;
+}
+.mobile-inversion{
+  display: contents;
+}
+.programme p {
+  margin-top: O;
+}
+.programme h5 {
+  text-align: right;
+}
+.programme h5:first-child {
+  margin-top: -2px;
+}
+.pdf {
+  background-color: rgb(55,201,188);
+  color: rgb(0, 0, 0);
+  font-size: 0.7rem;
+  font-weight: 700;
+  top: 3rem;
+  position: relative;
+  padding: 6px;
+  left: 2.55rem;
+}
+.dates {
+  margin-top: 9.6rem;
+}
+
+.event1 {
+  background-color: rgb(55,201,188);
+  display: flex;
+  height: 192px;
+}
+.event .img {
+  max-width: 300px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* permet à l'image de couvrir entièrement la div sans déformation */
+  object-position: center; /* centre l'image dans le contenant */
+  overflow: hidden;
+}
+.image {
+  max-width: 20vw;
+  flex: 1;
+  overflow: hidden;
+}
+.text {
+  color: rgb(0, 0, 0);
+  flex: 1;
+  margin-left: 0.5vw;
+  margin-top: 0;
+  padding-top: 0.3rem;
+  padding-right: 0.08vw;
+  overflow: scroll;
+  font-family: 'Bradford LL', sans-serif;
+  line-height: 0.5;
+
+}
+.text > p {
+  font-family: 'Neue Haas Grot Disp', sans-serif;
+}
+.text h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+  font-family: 'Neue Haas Grot Disp', sans-serif;
+  line-height: 1;
+}
+.text p {
+  margin-top: 0;
+  font-size: 0.8rem;
+  padding-top: 0;
+  text-indent: 0;
+  font-family: 'Neue Haas Grot Disp', sans-serif;
+}
+#contact {
+  margin-top: 0;
+  text-indent: 0;
+  margin-left: 4.5rem;
+}
+.mobile-inversion {
+  display: contents;
+}
+#manifesto, #essaouira, #roni-Elkabetz, #mobilisation, #pillier, #cinema, #echange{
+  scroll-margin-top: 6.43rem;
+}
+.mobile-white-margin {
+  display: none;
+}
+/* Style for the video elements */
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Style for the carousel container */
+/*#video-carousel {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}*/
+#video-carousel {
+  width: 70vw; /* Définir la largeur du carousel à 60% de la largeur de la fenêtre d'affichage */
+  z-index: -1; /* Place le carousel en arrière-plan */
+  position: absolute; /* Vous permet de superposer les éléments */
+  top: 0; /* Positionne le carousel en haut de la page */
+  left: -5vw; /* Centrer le carousel */
+  overflow: visible;
+}
+
+/* Style for the video elements */
+.carousel-video {
+  display: none;
+  /* Updated */
+  max-width: 100%;
+  /*object-fit: contain;*/
+  position: relative;
+  z-index: 0;
+}
+
+@media (max-width: 800px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 1.75em;
+  }
+  p {
+    font-size: 1rem;
+    margin-top: -4vh;
+  }
+  #fullscreen-svg {
+    background: url('E&S-landing-page-mobile.svg') center/cover no-repeat;
+  }
+  .background {
+    position: fixed;
+    width: 100vw;
+    max-width: 100%;
+    background-image: none;
+    z-index: 2;
+    object-fit: contain;
+    }
+    .background.dark-mode {
+      background-image: none;
+    }
+
+    .background.light-mode {
+      background-image: none;
+      /* Replace with your light mode image */
+    }
+  .red {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+    background-color: rgb(199, 14, 14);
+  }
+  .footer {
+    display: none !important;
+  }
+  .mobile-home {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-mobile {
+    text-align: left;
+    padding-right: 9.5rem;
+  }
+  .menu-mobile ul {
+    list-style: none;
+  }
+  .container {
+/*    flex-direction: column;*/
+    padding-top: 0;
+    justify-content: center; /* Centrer horizontalement */
+/*    align-items: flex-start; /* Centrer verticalement */
+    height: 100vh; /* Remplit la hauteur de l'écran */
+    max-height: 100vh;
+    margin: 20px 30px;
+    flex: none;
+    display: block;
+    position: fixed;
+  }
+  .left-side {
+    flex: none;
+  }
+  .menu {
+    margin-top: 20px;
+  }
+  .menu ul {
+    column-count: 2;
+    column-gap: 20px;
+    padding: 0;
+  }
+  .menu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-inversion{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .center {
+    top: inherit;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    height: 43vh;
+    max-width: 100vw;
+    width: 80vw;
+    margin: 0;
+    margin-right: 5px;
+    padding-top: 1rem;
+  }
+  .center h4:first-child{
+    margin-top: 1rem;
+  }
+  .center h4{
+    margin-left: 2vw;
+    margin-bottom: 1rem;
+    max-width: 100vw;
+  }
+
+  .center p{
+    margin-top: 1rem;
+    max-width: 100vw;
+    text-indent: 5vw;
+  }
+  .center p:first-child {
+    margin-top: 0;
+  }
+  .programme p:first-child {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .programme > h5 {
+    margin-top: 0;
+  }
+
+  .center h5{
+    margin-bottom: 1rem;
+    margin-top: 0rem;
+  }
+  .center ul {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  video {
+/*    height: 240px;
+    margin-left: -5vw;
+    margin-top: 10vh;
+*/    width: 80vw;
+  }
+  #video-carousel {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 15vw;
+    padding-top: 20vw;
+    left: 0;
+  }
+  .carousel {
+    width: 100vw;
+  }
+  .map {
+    height: auto;
+    width: -webkit-fill-available;
+  }
+  .img-class {
+    width: 100%;
+  }
+  .image {
+    max-width: 50vw;
+    overflow: hidden;
+  }
+  .text {
+    max-width: 50vw;
+    padding-right: 0px;
+    overflow: scroll;
+  }
+  .text p {
+    text-indent: 0;
+  }
+  .right-side {
+    margin: 0;
+    width: 80%;
+    overflow-x: auto; /* Active le défilement horizontal */
+    white-space: nowrap;
+  }
+  .news {
+    display: none;
+  }
+  .sub-menu, .dates {
+    margin-top: 2vh;
+  }
+  .right-side li {
+    padding-right: 15px;
+  }
+  .right-side li:last-child {
+  margin-right: 0; /* Supprime la marge du dernier élément */
+  }
+  .right-side .sub-menu ul {
+    padding: 0;
+    margin-bottom:15px;
+  }
+  .sub-menu {
+    max-width: 80vw;
+  }
+  .sub-menu li{
+    display: inline;
+  }
+  footer {
+    display: none;
+  }
+  #toggle-mode-button {
+    display: none;
+  }
+  .layout-options {
+    bottom: 0.5rem;
+  }
+  .mobile-white-margin{
+    bottom: 0;
+    position: fixed;
+    display: block;
+    height: 8vh;
+    width: 100%;
+    background-color: white;
+  }
+  #contact {
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+  .center p:first-child {
+    margin-top: 1rem;
+  }
+  .haut-de-page {
+    display: none;
+  }
+  .pdf-mobile {
+    background-color: rgb(55,201,188);
+    color: rgb(0, 0, 0);
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top:0rem;
+    position:static;
+    padding: 6px;
+    left: 2.55rem;
+    width: 75vw;
+  }
+}
+
+/* Your existing styles here */
+
+
+/* Style for the active video */
+.carousel-item.active .carousel-video {
+  display: block;
+  /* Updated */
+}
+.full-screen-yellow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 204, 43);
+}
+
+.full-screen-red {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(199, 14, 14);
+}
+
+.full-screen-blue {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(55, 201, 188);
+}
+.full-screen-yellow,
+.full-screen-red,
+.full-screen-blue {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 1;
+  /* Make sure it covers all other elements */
+}
+.fading {
+  opacity: 0 !important;
+  transition: opacity 1s ease-in-out;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+/* ... your other CSS ... */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  position:relative;
+  z-index: 10;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: grey;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked+.slider {
+  background-color: black;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.mobileShow {
+  display: none;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 800px) {
+  .mobileHide {
+    display: none;
+  }
+  .mobileShow {display: inline;}
+}
+.fullscreen-svg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+}
+#fullscreen-svg {
+  background: url('E&S-landing-page.svg') center/cover no-repeat;
+}
 .footer {
-  align-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color:rgb(199, 14, 14);
+  color: white;
+  text-align: center;
+  z-index: 0;
+  height: 8.1rem;
+  /* Adjust as needed to ensure it is below the SVG frame */
+  display: none;
+  justify-content: center;
+  /* Initially hidden */
+  flex-direction: row;
+  font-size: 0.8rem;
+}
+.footer ul {
+  margin:0;
+  margin-top: 0.2rem;
+  margin-left:-0.5rem;
+  list-style: none;
+  text-align: left;
+  font-size: 0.8rem;
+}
+.column1 {
+  margin-left:-15rem;
+}
+.img-height {
+  height: 22rem;
+}
+.distinctions {
+  font-family: "Haas Grot Disp 65 Medium", sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left:3rem;
+}
+/*.center > .distinctions p {
+  font-family: "Haas Grot Disp 65 Medium" !important;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.center > .distinctions ul {
+  font-family: "Haas Grot Disp 65 Medium" !important;
+}
+.center .distinctions {
+  font-family: "Haas Grot Disp 65 Medium", sans-serif !important;
+}
+*/
+.df {
+  display: flex;
 }

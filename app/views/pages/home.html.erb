@@ -1,49 +1,185 @@
-<div class="container">
-  <div class="left-side">
-    <div class="title">
-      <h1>ESTHER ET SELMA</h1>
-      <h2>Festival de cinéma de l'exil</h2>
-      <h2>Essaouira</h2>
-    </div>
-    <div class="menu">
-      <ul>
-        <li>Un festival engagé</li>
-        <li>2023, édition pionnière</li>
-        <li>Paroles</li>
-        <li>Tissu culturel</li>
-        <li>Programme</li>
-        <li>Infos pratiques</li>
-        <li>Billeterie</li>
-        <li>Contact</li>
-      </ul>
-      </div>
-    <div class="footer-logo">
-      logo
-    </div>
+<div class="mobileShow red mobile-home">
+  <div class="title" style="margin-top:8rem;>
+    <%= link_to root_path do %><h1  style="margin-top: -8rem;">ESTHER & SELMA</h1><% end %>
+    <p>Rencontres cinématographiques<br>
+    Essaouira</p>
   </div>
-    <div class="video">
-      <video width="320" height="240" controls>
-        <source src="/" type="">
-        <source src="/" type="">
-        Your browser does not support the video tag.
+  <%= image_tag 'E&S-logo-white.svg', style:"height:11rem; margin-top: -2rem;"%><br>
+  <div class="video-mobile mobileShow">
+     <video controls="false" muted autoplay playsinline poster="<%= asset_path('poster-ronit.png') %>">
+     <source src="<%= asset_path 'video1.mp4' %>" type="video/mp4">
+          Your browser does not support the video tag.
       </video>
-    </div>
-  <div class="right-side">
-    <div class="header-logo">
-      logo
-    </div>
-    <div class="news">
-      News
-    </div>
-    <div class="layout-options">
-      <ul>
-        <li>EXTRAIT SUIVANT</li>
-        <li>ACTIVER LE SON</li>
-        <li>INVERSER LES COULEURS</li>
-      </ul>
+  </div>
+  <div class="menu-mobile">
+    <ul>
+      <li><%= link_to "Un festival engagé", festival_path %></li>
+      <li><%= link_to "2023, édition pionnière", edition2023_path %></li>
+      <li><%= link_to "Paroles", paroles_path %></li>
+      <li><%= link_to "Tissu culturel", tissu_culturel_path %></li>
+      <li><%= link_to "Programme", programme15_path %></li>
+      <li><%= link_to "Infos pratiques", infos_pratiques_path %></li>
+      <li><%= link_to "Billetterie", billeterie_path %></li>
+      <li><%= link_to "Contact", contact_path %></li>
+    </ul>
+  </div>
+</div>
+<div id="fullscreen-svg" class="fullscreen-svg mobileHide"></div>
+<div class="center-video mobileHide">
+  <div id="video-carousel" class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <video id="video1" class="carousel-video" controls="false" muted autoplay playsinline poster="<%= asset_path('poster-ronit.png') %>">
+          <source src="<%= asset_path 'video1.mp4' %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+      </div>
+      <!-- Similar changes for other videos -->
+      <div class="carousel-item">
+        <video id="video2" class="carousel-video" muted controls="false">
+          <source src="<%= asset_path 'video2.mp4' %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="carousel-item">
+        <video id="video3" class="carousel-video" muted controls="false">
+          <source src="<%= asset_path 'video3.mp4' %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="carousel-item">
+        <video id="video4" class="carousel-video" muted controls="false" style="height: 36rem; margin-left: 5rem;">
+          <source src="<%= asset_path 'video4.mp4' %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 <div class="footer">
   texte defilant
 </div>
+=======
+<div class="right-side mobileHide">
+  <div class="news">
+    <p id="fullscreen-btn" class="link" style="position: fixed; bottom:6.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">PLEIN ECRAN</p>
+    <p id="next-video" class="link" style="position: fixed; bottom: 5.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">EXTRAIT SUIVANT</p>
+    <p id="toggle-sound" class="link" style="position: fixed; bottom: 4.7rem; right: 3.5rem; cursor: pointer; font-size: 0.8rem;">ACTIVER LE SON
+    </p>
+    <h5><%= link_to "Dernières actualités", pdf_path('Presentation1.pdf'), target: '_blank' %></h5>
+    <table>
+      <tr style="padding-bottom: 1rem">
+        <td style="padding-left: 3.2rem">En 2024, la naissance du Festival Esther et Selma à Essaouira!</td>
+      </tr>
+    </table>
+  </div>
+  <%# <div class="pdf-home mobileHide">
+      <%# <%= link_to 'TÉLÉCHARGER LE PDF', pdf_path('Presentation1.pdf'), target: '_blank' %> 
+  <%# </div>  %>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Elements
+  const fullscreenButton = document.getElementById('fullscreen-btn');
+  const videoContainer = document.getElementById('video-carousel');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const videos = document.querySelectorAll('.carousel-video');
+  const submenuLinks = document.querySelectorAll('.sub-menu a');
+  const svgElement = document.getElementById('fullscreen-svg');
+
+  // State variables
+  let currentIndex = 0;
+  let isMuted = true;
+
+  // Fullscreen toggle
+  fullscreenButton.addEventListener('click', function() {
+    // Get the current active video instead of the container
+    const activeVideo = document.querySelector('.carousel-item.active video');
+
+    if (activeVideo) {
+      if (!document.fullscreenElement) {
+        if (activeVideo.requestFullscreen) {
+          activeVideo.requestFullscreen();
+        } else if (activeVideo.mozRequestFullScreen) { /* Firefox */
+          activeVideo.mozRequestFullScreen();
+        } else if (activeVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+          activeVideo.webkitRequestFullscreen();
+        } else if (activeVideo.msRequestFullscreen) { /* IE/Edge */
+          activeVideo.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { /* Firefox */
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE/Edge */
+          document.msExitFullscreen();
+        }
+      }
+    }
+  });
+
+  // Sound toggle
+  document.getElementById('toggle-sound').addEventListener('click', function() {
+    isMuted = !isMuted;
+    videos.forEach(video => {
+      video.muted = isMuted;
+    });
+    this.innerText = isMuted ? "ACTIVER LE SON" : "DÉSACTIVER LE SON";
+  });
+
+  // Show video function
+  function showVideo(index) {
+    if (index < 0) {
+      index = carouselItems.length - 1;
+    } else if (index >= carouselItems.length) {
+      index = 0;
+    }
+
+    carouselItems[currentIndex].classList.remove('active');
+    videos[currentIndex].pause();
+    videos[currentIndex].currentTime = 0;
+
+    currentIndex = index;
+
+    carouselItems[currentIndex].classList.add('active');
+    videos[currentIndex].muted = isMuted;
+    videos[currentIndex].setAttribute('controls', 'true');
+    videos[currentIndex].play();
+  }
+
+  // Next video event
+  document.getElementById('next-video').addEventListener('click', function() {
+    showVideo(currentIndex + 1);
+  });
+
+  // Initialize the first video
+  showVideo(currentIndex);
+
+  // Sub-menu link activation
+  submenuLinks.forEach((link) => {
+    link.addEventListener('click', function() {
+      submenuLinks.forEach(lnk => lnk.classList.remove('active'));
+      link.classList.add('active');
+    });
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+
+  // Fade out fullscreen SVG after 3 seconds
+  setTimeout(function() {
+    if (svgElement) {
+      svgElement.style.opacity = '0';
+      setTimeout(function() {
+        svgElement.parentNode.removeChild(svgElement);
+      }, 1000);
+    }
+  }, 6000);
+});
+</script>
+>>>>>>> photosbis
